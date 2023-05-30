@@ -1,18 +1,12 @@
-import {createRouter, createWebHistory, NavigationGuardNext, RouteLocationNormalized} from "vue-router";
+import {createRouter, createWebHistory} from "vue-router";
+import {Middleware, MiddlewareContext} from "./types";
+
 import routes from "./routes";
 
 const router = createRouter({
     history: createWebHistory(),
     routes
 });
-
-export interface MiddlewareContext {
-    to: RouteLocationNormalized;
-    from: RouteLocationNormalized;
-    next: NavigationGuardNext;
-}
-
-export type Middleware = (context: MiddlewareContext) => void;
 
 function middlewarePipeline(context: MiddlewareContext, middleware: Middleware[], index: number): () => void {
     const nextMiddleware = middleware[index];
