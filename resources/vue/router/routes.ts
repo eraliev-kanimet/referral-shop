@@ -1,18 +1,10 @@
 import {RouteRecordRaw} from "vue-router";
 
-import defaultLayout from "../layouts/default.vue";
-
 const routes: RouteRecordRaw[] = [
     {
         path: '/',
-        component: defaultLayout,
-        children: [
-            {
-                path: '',
-                name: 'home',
-                component: () => import('../pages/home.vue')
-            }
-        ]
+        name: 'home',
+        component: () => import('../pages/home.vue')
     },
     {
         path: '/:pathMatch(.*)*',
