@@ -57,24 +57,6 @@
                                             <td><a class="text-muted" href=""><i class="icon-trash icon-inline"></i></a></td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <a class="product-table" href="">
-                                                    <div class="product-table-image border d-none d-sm-flex"><img src="tmp/pills-1.png" alt=""></div>
-                                                    <div class="product-table-content">Viagra Professional <span class="d-block d-sm-inline">20 Pills x 50mg</span></div>
-                                                </a>
-                                            </td>
-                                            <td>$33.59</td>
-                                            <td>
-                                                <div class="d-flex flex-column flex-sm-row align-items-center">
-                                                    <button class="btn btn-sm px-1 border order-3 order-md-1"><i class="icon-minus icon-inline icon-sm"></i></button>
-                                                    <input class="table-qty mx-1 form-control form-control-sm border-0 text-center order-2" type="text" value="1">
-                                                    <button class="btn btn-sm px-1 border order-1 order-md-3"><i class="icon-plus icon-inline icon-sm"></i></button>
-                                                </div>
-                                            </td>
-                                            <td class="font-weight-bold">$33.59</td>
-                                            <td><a class="text-muted" href=""><i class="icon-trash icon-inline"></i></a></td>
-                                        </tr>
-                                        <tr>
                                             <td>Internal balance</td>
                                             <td>-$100</td>
                                             <td></td>

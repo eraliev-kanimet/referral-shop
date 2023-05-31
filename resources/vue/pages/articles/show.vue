@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+import Categories from "../../components/products/categories.vue";
 </script>
 
 <template>
@@ -26,7 +27,7 @@
                     <h3>Two New Subgroups</h3>
                     <p>The two newly identified cancer subtypes are SCL and WNT. Researchers studied the RNA and DNA of 40 tumor samples, along with their chromatin. Chromatin is a mix of proteins and DNA that wraps up chromosomes in a cell. Looking at the chromatin helped the researchers identify the four types of prostate cancer cells, including the two new varieties. The scientists then looked at treatment resistance and saw SCL was in 22 to 30 percent of cases. WNT was only five to seven percent.</p>
                     <p>Share with your friends! (paste AddThis code below)</p>
-                    <img src="tmp/addthis.png" alt="">
+                    <img src="" alt="">
                     <div class="post-nav mt-4 pt-3 border-top">
                         <div class="row row-cols-2">
                             <div class="col post-nav-prev text-left">
@@ -42,36 +43,9 @@
             <div class="col-12 col-lg-3">
                 <h2>Popular articles</h2>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-1 mb-4">
-                    <div class="col">
+                    <div class="col" v-for="i in 4">
                         <div class="post-widget row no-gutters py-4 border-bottom">
-                            <div class="col-5 pr-3"><a href=""><img src="tmp/blog-preview-1.jpg" alt=""></a></div>
-                            <div class="col-7">
-                                <a class="post-widget-title text-dark" href="">For you that need Medicine Urgently some more words</a>
-                                <span class="post-widget-date text-muted">14-oct-2020</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="post-widget row no-gutters py-4 border-bottom">
-                            <div class="col-5 pr-3"><a href=""><img src="tmp/blog-preview-2.jpg" alt=""></a></div>
-                            <div class="col-7">
-                                <a class="post-widget-title text-dark" href="">For you that need Medicine Urgently some more words</a>
-                                <span class="post-widget-date text-muted">14-oct-2020</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="post-widget row no-gutters py-4 border-bottom">
-                            <div class="col-5 pr-3"><a href=""><img src="tmp/blog-preview-3.jpg" alt=""></a></div>
-                            <div class="col-7">
-                                <a class="post-widget-title text-dark" href="">For you that need Medicine Urgently some more words</a>
-                                <span class="post-widget-date text-muted">14-oct-2020</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="post-widget row no-gutters py-4 border-bottom">
-                            <div class="col-5 pr-3"><a href=""><img src="tmp/blog-preview-4.jpg" alt=""></a></div>
+                            <div class="col-5 pr-3"><a href=""><img src="" alt=""></a></div>
                             <div class="col-7">
                                 <a class="post-widget-title text-dark" href="">For you that need Medicine Urgently some more words</a>
                                 <span class="post-widget-date text-muted">14-oct-2020</span>
@@ -98,49 +72,9 @@
                 </div>
             </div>
             <div class="blog-slider mt-1 mt-md-4">
-                <div>
+                <div v-for="i in 6">
                     <div class="blog-card">
                         <a class="blog-card-image" href=""><img src="tmp/blog-preview-1.jpg" alt=""></a>
-                        <div class="blog-card-meta text-muted">Posted on: <span>14-oct-2020</span></div>
-                        <div class="blog-card-excerpt">Thyroid in Kids: Everything You Need to Know</div>
-                        <a class="blog-card-more" href=""><i class="icon-plus"></i>Read more</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="blog-card">
-                        <a class="blog-card-image" href=""><img src="tmp/blog-preview-2.jpg" alt=""></a>
-                        <div class="blog-card-meta text-muted">Posted on: <span>14-oct-2020</span></div>
-                        <div class="blog-card-excerpt">Thyroid in Kids: Everything You Need to Know</div>
-                        <a class="blog-card-more" href=""><i class="icon-plus"></i>Read more</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="blog-card">
-                        <a class="blog-card-image" href=""><img src="tmp/blog-preview-3.jpg" alt=""></a>
-                        <div class="blog-card-meta text-muted">Posted on: <span>14-oct-2020</span></div>
-                        <div class="blog-card-excerpt">Thyroid in Kids: Everything You Need to Know</div>
-                        <a class="blog-card-more" href=""><i class="icon-plus"></i>Read more</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="blog-card">
-                        <a class="blog-card-image" href=""><img src="tmp/blog-preview-4.jpg" alt=""></a>
-                        <div class="blog-card-meta text-muted">Posted on: <span>14-oct-2020</span></div>
-                        <div class="blog-card-excerpt">Thyroid in Kids: Everything You Need to Know</div>
-                        <a class="blog-card-more" href=""><i class="icon-plus"></i>Read more</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="blog-card">
-                        <a class="blog-card-image" href=""><img src="tmp/blog-preview-1.jpg" alt=""></a>
-                        <div class="blog-card-meta text-muted">Posted on: <span>14-oct-2020</span></div>
-                        <div class="blog-card-excerpt">Thyroid in Kids: Everything You Need to Know</div>
-                        <a class="blog-card-more" href=""><i class="icon-plus"></i>Read more</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="blog-card">
-                        <a class="blog-card-image" href=""><img src="tmp/blog-preview-2.jpg" alt=""></a>
                         <div class="blog-card-meta text-muted">Posted on: <span>14-oct-2020</span></div>
                         <div class="blog-card-excerpt">Thyroid in Kids: Everything You Need to Know</div>
                         <a class="blog-card-more" href=""><i class="icon-plus"></i>Read more</a>
@@ -150,92 +84,7 @@
         </div>
         <div class="my-4 my-lg-5">
             <h2 class="h1">Shop by categories</h2>
-            <div class="categories my-3 my-md-4 row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 no-gutters">
-                <a class="categories-item" href="">
-                    <div class="categories-item-content">
-                        <div class="categories-item-image"><img src="tmp/cat-1.png" alt=""></div>
-                        <div class="categories-item-title">Erectile Dysfunction</div>
-                        <div class="categories-item-amount text-muted">4 products</div>
-                    </div>
-                </a>
-                <a class="categories-item" href="">
-                    <div class="categories-item-content">
-                        <div class="categories-item-image"><img src="tmp/cat-2.png" alt=""></div>
-                        <div class="categories-item-title">Anti-Allergic/Asthma</div>
-                        <div class="categories-item-amount text-muted">4 products</div>
-                    </div>
-                </a>
-                <a class="categories-item" href="">
-                    <div class="categories-item-content">
-                        <div class="categories-item-image"><img src="tmp/cat-3.png" alt=""></div>
-                        <div class="categories-item-title">Anti-Diabetic</div>
-                        <div class="categories-item-amount text-muted">4 products</div>
-                    </div>
-                </a>
-                <a class="categories-item" href="">
-                    <div class="categories-item-content">
-                        <div class="categories-item-image"><img src="tmp/cat-4.png" alt=""></div>
-                        <div class="categories-item-title">Anti-Herpes</div>
-                        <div class="categories-item-amount text-muted">4 products</div>
-                    </div>
-                </a>
-                <a class="categories-item" href="">
-                    <div class="categories-item-content">
-                        <div class="categories-item-image"><img src="tmp/cat-5.png" alt=""></div>
-                        <div class="categories-item-title">Blood Pressure</div>
-                        <div class="categories-item-amount text-muted">4 products</div>
-                    </div>
-                </a>
-                <a class="categories-item" href="">
-                    <div class="categories-item-content">
-                        <div class="categories-item-image"><img src="tmp/cat-6.png" alt=""></div>
-                        <div class="categories-item-title">Gastrointestinal</div>
-                        <div class="categories-item-amount text-muted">4 products</div>
-                    </div>
-                </a>
-                <a class="categories-item" href="">
-                    <div class="categories-item-content">
-                        <div class="categories-item-image"><img src="tmp/cat-7.png" alt=""></div>
-                        <div class="categories-item-title">Anti-Acidity</div>
-                        <div class="categories-item-amount text-muted">4 products</div>
-                    </div>
-                </a>
-                <a class="categories-item" href="">
-                    <div class="categories-item-content">
-                        <div class="categories-item-image"><img src="tmp/cat-8.png" alt=""></div>
-                        <div class="categories-item-title">Anti-Deppresant</div>
-                        <div class="categories-item-amount text-muted">4 products</div>
-                    </div>
-                </a>
-                <a class="categories-item" href="">
-                    <div class="categories-item-content">
-                        <div class="categories-item-image"><img src="tmp/cat-9.png" alt=""></div>
-                        <div class="categories-item-title">Anti-Fungus</div>
-                        <div class="categories-item-amount text-muted">4 products</div>
-                    </div>
-                </a>
-                <a class="categories-item" href="">
-                    <div class="categories-item-content">
-                        <div class="categories-item-image"><img src="tmp/cat-10.png" alt=""></div>
-                        <div class="categories-item-title">Antibiotics</div>
-                        <div class="categories-item-amount text-muted">4 products</div>
-                    </div>
-                </a>
-                <a class="categories-item" href="">
-                    <div class="categories-item-content">
-                        <div class="categories-item-image"><img src="tmp/cat-11.png" alt=""></div>
-                        <div class="categories-item-title">Cholesterol</div>
-                        <div class="categories-item-amount text-muted">4 products</div>
-                    </div>
-                </a>
-                <a class="categories-item" href="">
-                    <div class="categories-item-content">
-                        <div class="categories-item-image"><img src="tmp/cat-12.png" alt=""></div>
-                        <div class="categories-item-title">General Health</div>
-                        <div class="categories-item-amount text-muted">4 products</div>
-                    </div>
-                </a>
-            </div>
+            <categories/>
         </div>
     </div>
 </template>

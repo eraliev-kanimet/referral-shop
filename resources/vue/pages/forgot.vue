@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="acc-info acc-info-image">
-                <img class="acc-info-image-main" src="images/acc-forgot.svg" alt="">
+                <img class="acc-info-image-main" src="../assets/images/acc-forgot.svg" alt="">
             </div>
         </div>
     </div>

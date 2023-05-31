@@ -18,57 +18,12 @@
         <div class="testimonials my-4 my-lg-5">
             <h2 class="h1">Check out what people say about our solution!</h2>
             <div class="testimonials-slider mt-4 mt-lg-5">
-                <div>
+                <div v-for="i in 6">
                     <div class="testimonials-item">
                         <p class="testimonials-item-text">Your service is amazing! I have never dealt with another company with this great service! I only hope the package makes it through to the United States! :)</p>
                         <img class="testimonials-item-image" src="tmp/author-1.png" alt="">
                         <div class="testimonials-item-author">James Morris</div>
                         <div class="testimonials-item-origin text-muted">Kentucky</div>
-                        <img class="testimonials-item-rating" src="images/stars.svg" alt="">
-                    </div>
-                </div>
-                <div>
-                    <div class="testimonials-item">
-                        <p class="testimonials-item-text">Captchabot enabled us to scale up our data collection of potential trafficking victims and helped identify 14,874 child victims of human trafficking</p>
-                        <img class="testimonials-item-image" src="tmp/author-2.png" alt="">
-                        <div class="testimonials-item-author">Bria King</div>
-                        <div class="testimonials-item-origin text-muted">Pennsylvania</div>
-                        <img class="testimonials-item-rating" src="images/stars.svg" alt="">
-                    </div>
-                </div>
-                <div>
-                    <div class="testimonials-item">
-                        <p class="testimonials-item-text">Your service is amazing! I have never dealt with another company with this great service! I only hope the package makes it through to the United States! :)</p>
-                        <img class="testimonials-item-image" src="tmp/author-2.png" alt="">
-                        <div class="testimonials-item-author">Bernie McAllister</div>
-                        <div class="testimonials-item-origin text-muted">Australia</div>
-                        <img class="testimonials-item-rating" src="images/stars.svg" alt="">
-                    </div>
-                </div>
-                <div>
-                    <div class="testimonials-item">
-                        <p class="testimonials-item-text">Your service is amazing! I have never dealt with another company with this great service! I only hope the package makes it through to the United States! :)</p>
-                        <img class="testimonials-item-image" src="tmp/author-1.png" alt="">
-                        <div class="testimonials-item-author">James Morris</div>
-                        <div class="testimonials-item-origin text-muted">Kentucky</div>
-                        <img class="testimonials-item-rating" src="images/stars.svg" alt="">
-                    </div>
-                </div>
-                <div>
-                    <div class="testimonials-item">
-                        <p class="testimonials-item-text">Captchabot enabled us to scale up our data collection of potential trafficking victims and helped identify 14,874 child victims of human trafficking</p>
-                        <img class="testimonials-item-image" src="tmp/author-2.png" alt="">
-                        <div class="testimonials-item-author">Bria King</div>
-                        <div class="testimonials-item-origin text-muted">Pennsylvania</div>
-                        <img class="testimonials-item-rating" src="images/stars.svg" alt="">
-                    </div>
-                </div>
-                <div>
-                    <div class="testimonials-item">
-                        <p class="testimonials-item-text">Your service is amazing! I have never dealt with another company with this great service! I only hope the package makes it through to the United States! :)</p>
-                        <img class="testimonials-item-image" src="tmp/author-2.png" alt="">
-                        <div class="testimonials-item-author">Bernie McAllister</div>
-                        <div class="testimonials-item-origin text-muted">Australia</div>
                         <img class="testimonials-item-rating" src="images/stars.svg" alt="">
                     </div>
                 </div>

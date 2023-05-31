@@ -6,48 +6,23 @@
     <div class="container">
         <div class="dashboard my-4 my-lg-5">
             <div class="dashboard-sidebar d-none d-xl-block">
-                <div class="dashboard-userbar border-bottom pb-3 mb-3">
-                    <a class="dashboard-userbar-avatar" href=""><img src="tmp/author-1.png" alt=""></a>
-                    <div class="dashboard-userbar-content">
-                        <a class="dashboard-userbar-name" href="">ad***@gmail.com</a>
-                        <div class="dashboard-userbar-links">
-                            <a href="profile.html">Edit profile</a>
-                            <a href="">Logout</a>
+                <div class="mb-4">
+                    <div class="dashboard-nav-search">
+                        <input type="text" class="form-control" placeholder="Search for products" value="Viagra">
+                        <button class="dashboard-nav-search-btn"><i class="icon-search"></i></button>
+                        <div class="dropdown-menu w-100">
+                            <a class="dropdown-item" href="#"><strong>Viagra</strong></a>
+                            <a class="dropdown-item" href="#"><strong>Viagra</strong> Original</a>
+                            <a class="dropdown-item" href="#">Generic <strong>Viagra</strong></a>
+                            <a class="dropdown-item" href="#"><strong>Viagra</strong> Trial Pack</a>
+                            <a class="dropdown-item" href="#"><strong>Viagra</strong> Soft Tabs</a>
                         </div>
                     </div>
                 </div>
                 <ul class="dashboard-nav mt-3 mb-4">
-                    <li class="dashboard-nav-item active"><a class="dashboard-nav-link" href="dashboard.html"><i class="dashboard-nav-icon icon-dashboard"></i>Dashboard</a></li>
-                    <li class="dashboard-nav-item">
-                        <a class="dashboard-nav-link" href="products.html"><i class="dashboard-nav-icon icon-products"></i>Products</a>
-                        <button class="dashboard-nav-collapse btn btn-sm collapsed" data-toggle="collapse" data-target="#categories" aria-expanded="false"><i class="icon-dropdown"></i></button>
-                        <ul class="dashboard-subnav collapse" id="categories">
-                            <li><a href="">Anti Viral</a></li>
-                            <li><a href="">Anti-Acidity</a></li>
-                            <li><a href="">Anti-Allergic/Asthma</a></li>
-                            <li><a href="">Anti-Depressant</a></li>
-                            <li><a href="">Anti-Diabetic</a></li>
-                            <li><a href="">Anti-Fungus</a></li>
-                            <li><a href="">Anti-Herpes</a></li>
-                            <li><a href="">Antibiotics</a></li>
-                            <li><a href="">Blood Pressure</a></li>
-                            <li><a href="">Cholesterol</a></li>
-                            <li><a href="">View all categories</a></li>
-                        </ul>
-                    </li>
-                    <li class="dashboard-nav-item"><a class="dashboard-nav-link" href="orders.html"><i class="dashboard-nav-icon icon-orders"></i>Orders</a></li>
-                    <li class="dashboard-nav-item"><a class="dashboard-nav-link" href="tickets.html"><i class="dashboard-nav-icon icon-tickets"></i>Tickets</a></li>
-                    <li class="dashboard-nav-item"><a class="dashboard-nav-link" href="referrals.html"><i class="dashboard-nav-icon icon-referrals"></i>Referrals</a></li>
+                    <li class="dashboard-nav-item"><a class="dashboard-nav-link" href="">Bestsellers</a></li>
+                    <li class="dashboard-nav-item" v-for="i in 10"><a class="dashboard-nav-link" href="">Cialis Super Active</a></li>
                 </ul>
-                <div class="my-4">
-                    <div class="dashboard-nav-search">
-                        <input type="text" class="form-control" placeholder="Search for products">
-                        <button class="dashboard-nav-search-btn"><i class="icon-search"></i></button>
-                    </div>
-                </div>
-                <div class="alert alert-primary my-4">
-                    Your account is not verified. Please visit <a href="profile.html#profile-verification">this page</a> to verify it.
-                </div>
             </div>
             <div class="dashboard-content">
                 <div class="row mb-4 mb-lg-5">
@@ -99,13 +74,6 @@
                                         <a href="">Caverta</a>
                                         <a href="">Female viagra</a>
                                         <a href="">Extra Super Viagra</a>
-                                        <a href="">Kamagra</a>
-                                        <a href="">L Aurogra</a>
-                                        <a href="">brand viagra</a>
-                                        <a href="">Caverta</a>
-                                        <a href="">Female viagra</a>
-                                        <a href="">Extra Super Viagra</a>
-                                        <a href="">Kamagra</a>
                                     </div>
                                     <button class="btn btn-primary product-tags-btn collapsed" data-toggle="collapse" data-target="#productTags" aria-expanded="false" aria-controls="productTags"><i class="icon-minus icon-inline"></i></button>
                                 </div>
@@ -116,14 +84,14 @@
                         </div>
                         <div class="h2">We accept</div>
                         <div class="footer-payment">
-                            <div><img src="images/visa.svg" alt=""></div>
-                            <div><img src="images/mastercard.svg" alt=""></div>
-                            <div><img src="images/discover.svg" alt=""></div>
-                            <div><img src="images/amex.svg" alt=""></div>
-                            <div><img src="images/sepa.svg" alt=""></div>
-                            <div><img src="images/paypal.svg" alt=""></div>
-                            <div><img src="images/bitcoin.svg" alt=""></div>
-                            <div><img src="images/tether.svg" alt=""></div>
+                            <div><img src="../../assets/images/visa.svg" alt=""></div>
+                            <div><img src="../../assets/images/mastercard.svg" alt=""></div>
+                            <div><img src="../../assets/images/discover.svg" alt=""></div>
+                            <div><img src="../../assets/images/amex.svg" alt=""></div>
+                            <div><img src="../../assets/images/sepa.svg" alt=""></div>
+                            <div><img src="../../assets/images/paypal.svg" alt=""></div>
+                            <div><img src="../../assets/images/bitcoin.svg" alt=""></div>
+                            <div><img src="../../assets/images/tether.svg" alt=""></div>
                         </div>
                     </div>
                 </div>
@@ -132,15 +100,15 @@
                     <table class="table table-xs">
                         <tbody>
                         <tr>
-                            <td><img src="images/airmail.svg" style="min-width: 24px;" alt=""></td>
-                            <td><img src="images/flags/flag-gb.svg" style="min-width: 16px;" alt=""></td>
+                            <td><img src="../../assets/images/airmail.svg" style="min-width: 24px;" alt=""></td>
+                            <td><img src="" style="min-width: 16px;" alt=""></td>
                             <td>$12.95</td>
                             <td>Delivery period: <strong>14-21 Days</strong></td>
                             <td>Tracking # available in 14 days</td>
                         </tr>
                         <tr>
-                            <td><img src="images/ems.svg" style="min-width: 24px;" alt=""></td>
-                            <td><img src="images/flags/flag-gb.svg" style="min-width: 16px;" alt=""></td>
+                            <td><img src="../../assets/images/ems.svg" style="min-width: 24px;" alt=""></td>
+                            <td><img src="" style="min-width: 16px;" alt=""></td>
                             <td>$12.95</td>
                             <td>Delivery period: <strong>14-21 Days</strong></td>
                             <td>Tracking # available in 14 days</td>
@@ -152,11 +120,13 @@
                 <div class="table-responsive my-3">
                     <table class="table table-hoverable table-xs">
                         <thead>
-                        <th>Package</th>
-                        <th>Per pill</th>
-                        <th>Total price</th>
-                        <th>Save</th>
-                        <th class="text-right">Order</th>
+                            <tr>
+                                <th>Package</th>
+                                <th>Per pill</th>
+                                <th>Total price</th>
+                                <th>Save</th>
+                                <th class="text-right">Order</th>
+                            </tr>
                         </thead>
                         <tbody>
                         <tr>
@@ -164,34 +134,6 @@
                             <td>$2.75 USD</td>
                             <td><strong>$27.45 USD</strong><span class="d-block text-success">+ Bonus - 4 Pills</span></td>
                             <td>-</td>
-                            <td class="text-right"><a class="btn btn-primary show-cart" href=""><i class="icon-cart icon-inline d-md-none"></i><span class="d-none d-md-block">Add to cart</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="font-weight-bold">100mg x 10 pills</td>
-                            <td>$2.75 USD</td>
-                            <td><strong>$27.45 USD</strong><span class="d-block text-success">+ Bonus - 4 Pills</span></td>
-                            <td class="text-secondary">$1.60 USD</td>
-                            <td class="text-right"><a class="btn btn-primary show-cart" href=""><i class="icon-cart icon-inline d-md-none"></i><span class="d-none d-md-block">Add to cart</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="font-weight-bold">100mg x 10 pills</td>
-                            <td>$2.75 USD</td>
-                            <td><strong>$27.45 USD</strong><span class="d-block text-success">+ Bonus - 4 Pills</span></td>
-                            <td class="text-secondary">$1.60 USD</td>
-                            <td class="text-right"><a class="btn btn-primary show-cart" href=""><i class="icon-cart icon-inline d-md-none"></i><span class="d-none d-md-block">Add to cart</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="font-weight-bold">100mg x 10 pills</td>
-                            <td>$2.75 USD</td>
-                            <td><strong>$27.45 USD</strong><span class="d-block text-success">+ Bonus - 4 Pills</span></td>
-                            <td class="text-secondary">$1.60 USD</td>
-                            <td class="text-right"><a class="btn btn-primary show-cart" href=""><i class="icon-cart icon-inline d-md-none"></i><span class="d-none d-md-block">Add to cart</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="font-weight-bold">100mg x 10 pills</td>
-                            <td>$2.75 USD</td>
-                            <td><strong>$27.45 USD</strong><span class="d-block text-success">+ Bonus - 4 Pills</span></td>
-                            <td class="text-secondary">$1.60 USD</td>
                             <td class="text-right"><a class="btn btn-primary show-cart" href=""><i class="icon-cart icon-inline d-md-none"></i><span class="d-none d-md-block">Add to cart</span></a></td>
                         </tr>
                         </tbody>
@@ -201,11 +143,13 @@
                 <div class="table-responsive my-3">
                     <table class="table table-hoverable table-xs">
                         <thead>
-                        <th>Package</th>
-                        <th>Per pill</th>
-                        <th>Total price</th>
-                        <th>Save</th>
-                        <th class="text-right">Order</th>
+                            <tr>
+                                <th>Package</th>
+                                <th>Per pill</th>
+                                <th>Total price</th>
+                                <th>Save</th>
+                                <th class="text-right">Order</th>
+                            </tr>
                         </thead>
                         <tbody>
                         <tr>
@@ -213,34 +157,6 @@
                             <td>$2.75 USD</td>
                             <td><strong>$27.45 USD</strong><span class="d-block text-success">+ Bonus - 4 Pills</span></td>
                             <td>-</td>
-                            <td class="text-right"><a class="btn btn-primary show-cart" href=""><i class="icon-cart icon-inline d-md-none"></i><span class="d-none d-md-block">Add to cart</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="font-weight-bold">100mg x 10 pills</td>
-                            <td>$2.75 USD</td>
-                            <td><strong>$27.45 USD</strong><span class="d-block text-success">+ Bonus - 4 Pills</span></td>
-                            <td class="text-secondary">$1.60 USD</td>
-                            <td class="text-right"><a class="btn btn-primary show-cart" href=""><i class="icon-cart icon-inline d-md-none"></i><span class="d-none d-md-block">Add to cart</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="font-weight-bold">100mg x 10 pills</td>
-                            <td>$2.75 USD</td>
-                            <td><strong>$27.45 USD</strong><span class="d-block text-success">+ Bonus - 4 Pills</span></td>
-                            <td class="text-secondary">$1.60 USD</td>
-                            <td class="text-right"><a class="btn btn-primary show-cart" href=""><i class="icon-cart icon-inline d-md-none"></i><span class="d-none d-md-block">Add to cart</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="font-weight-bold">100mg x 10 pills</td>
-                            <td>$2.75 USD</td>
-                            <td><strong>$27.45 USD</strong><span class="d-block text-success">+ Bonus - 4 Pills</span></td>
-                            <td class="text-secondary">$1.60 USD</td>
-                            <td class="text-right"><a class="btn btn-primary show-cart" href=""><i class="icon-cart icon-inline d-md-none"></i><span class="d-none d-md-block">Add to cart</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="font-weight-bold">100mg x 10 pills</td>
-                            <td>$2.75 USD</td>
-                            <td><strong>$27.45 USD</strong><span class="d-block text-success">+ Bonus - 4 Pills</span></td>
-                            <td class="text-secondary">$1.60 USD</td>
                             <td class="text-right"><a class="btn btn-primary show-cart" href=""><i class="icon-cart icon-inline d-md-none"></i><span class="d-none d-md-block">Add to cart</span></a></td>
                         </tr>
                         </tbody>
@@ -254,19 +170,19 @@
                     <div class="col-4 col-md-2">
                         <div class="product-package">
                             <div class="product-package-title">Front view</div>
-                            <div class="product-package-image bg-light"><img src="images/package-front.png" alt=""></div>
+                            <div class="product-package-image bg-light"><img src="../../assets/images/package-front.png" alt=""></div>
                         </div>
                     </div>
                     <div class="col-4 col-md-2">
                         <div class="product-package">
                             <div class="product-package-title">Side view</div>
-                            <div class="product-package-image bg-light"><img src="images/package-side.png" alt=""></div>
+                            <div class="product-package-image bg-light"><img src="../../assets/images/package-side.png" alt=""></div>
                         </div>
                     </div>
                     <div class="col-4 col-md-2">
                         <div class="product-package">
                             <div class="product-package-title">Back view</div>
-                            <div class="product-package-image bg-light"><img src="images/package-back.png" alt=""></div>
+                            <div class="product-package-image bg-light"><img src="../../assets/images/package-back.png" alt=""></div>
                         </div>
                     </div>
                 </div>

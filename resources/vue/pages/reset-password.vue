@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="acc-info acc-info-image">
-                <img class="acc-info-image-main" src="images/acc-reset.svg" alt="">
+                <img class="acc-info-image-main" src="../assets/images/acc-reset.svg" alt="">
             </div>
         </div>
     </div>
