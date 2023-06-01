@@ -1,22 +1,20 @@
 <script setup lang="ts">
+import ArticlesItem from "../../components/articles/articles-item.vue";
+import {useArticlesStore} from "../../stores/articles";
 
+const articlesStore = useArticlesStore()
 </script>
 
 <template>
     <div class="container">
         <div class="my-4 my-lg-5">
             <div class="heading-short">
-                <h1>Collection of articles that will help you with choosing and ordering drugs from our store</h1>
+                <h1>{{ $t('common.articles.text1') }}</h1>
             </div>
-            <p><strong>Happy Family Store</strong> brings you exclusive content intended for men and woman who are interested in their fitness, diet, sexual health and much more. <strong>I's all here!</strong></p>
+            <p v-html="$t('common.articles.text2')"></p>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 my-4">
-                <div class="col mb-4" v-for="i in 8">
-                    <div class="blog-card">
-                        <a class="blog-card-image" href=""><img src="" alt=""></a>
-                        <div class="blog-card-meta text-muted">Posted on: <span>14-oct-2020</span></div>
-                        <div class="blog-card-excerpt">Thyroid in Kids: Everything You Need to Know</div>
-                        <a class="blog-card-more" href=""><i class="icon-plus"></i>Read more</a>
-                    </div>
+                <div class="col mb-4" v-for="article in articlesStore.articles">
+                    <articles-item :article="article"/>
                 </div>
             </div>
             <ul class="paginator my-4">

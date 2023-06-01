@@ -4,6 +4,7 @@ import auth from "../middleware/auth";
 
 const route: RouteRecordRaw = {
     path: '/dashboard',
+    component: () => import('../../layouts/dashboard.vue'),
     meta: {
         middleware: [auth]
     },

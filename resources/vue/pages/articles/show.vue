@@ -1,12 +1,15 @@
 <script setup lang="ts">
-
 import Categories from "../../components/products/categories.vue";
+import ArticlesSlider from "../../components/articles/articles-slider.vue";
+import {useArticlesStore} from "../../stores/articles";
+
+const articlesStore = useArticlesStore()
 </script>
 
 <template>
     <div class="container">
         <div class="my-4">
-            <img class="d-block" src="tmp/post-image.jpg" alt="">
+            <img class="d-block" src="../../assets/tmp/post-image.jpg" alt="">
         </div>
         <div class="row">
             <div class="col-12 col-lg-9 mb-4 mb-lg-0">
@@ -31,59 +34,49 @@ import Categories from "../../components/products/categories.vue";
                     <div class="post-nav mt-4 pt-3 border-top">
                         <div class="row row-cols-2">
                             <div class="col post-nav-prev text-left">
-                                <a href=""><i class="icon-arrow-left mr-1"></i>Prev post</a>
+                                <a href=""><i class="icon-arrow-left mr-1"></i>{{ $t('common.prev_post') }}</a>
                             </div>
                             <div class="col post-nav-next text-right">
-                                <a href="">Next post<i class="icon-arrow-right ml-1"></i></a>
+                                <a href="">{{ $t('common.next_post') }}<i class="icon-arrow-right ml-1"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-lg-3">
-                <h2>Popular articles</h2>
+                <h2>{{ $t('common.popular_articles') }}</h2>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-1 mb-4">
-                    <div class="col" v-for="i in 4">
+                    <div class="col" v-for="article in articlesStore.articles">
                         <div class="post-widget row no-gutters py-4 border-bottom">
-                            <div class="col-5 pr-3"><a href=""><img src="" alt=""></a></div>
+                            <div class="col-5 pr-3">
+                                <router-link :to="article.route">
+                                    <img :src="article.image" alt="">
+                                </router-link>
+                            </div>
                             <div class="col-7">
-                                <a class="post-widget-title text-dark" href="">For you that need Medicine Urgently some more words</a>
-                                <span class="post-widget-date text-muted">14-oct-2020</span>
+                                <router-link :to="article.route" class="post-widget-title text-dark">
+                                    {{ article.name }}
+                                </router-link>
+                                <span class="post-widget-date text-muted">{{ article.date }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <a class="product-preview mt-4 p-3 border d-flex align-items-center" href="">
-                    <div class="product-preview-image pr-2"><img src="tmp/viagra.jpg" alt=""></div>
+                    <div class="product-preview-image pr-2"><img src="../../assets/tmp/viagra.jpg" alt=""></div>
                     <div class="product-preview-content">
-                        <div class="product-preview-title text-secondary text-uppercase">Up to 50% off</div>
-                        <div class="product-preview-description text-dark my-3">Order at the first time</div>
-                        <div class="btn btn-primary">Shop now!</div>
+                        <div class="product-preview-title text-secondary text-uppercase"></div>
+                        <div class="product-preview-description text-dark my-3"></div>
+                        <div class="btn btn-primary">{{ $t('common.shop_now') }}</div>
                     </div>
                 </a>
             </div>
         </div>
         <div class="my-4 my-lg-5">
-            <div class="d-flex flex-wrap align-items-center justify-content-between">
-                <h2 class="h1">Related articles</h2>
-                <div>
-                    <i class="blog-slider-prev icon-arrow-left"></i>
-                    <i class="blog-slider-next icon-arrow-right"></i>
-                </div>
-            </div>
-            <div class="blog-slider mt-1 mt-md-4">
-                <div v-for="i in 6">
-                    <div class="blog-card">
-                        <a class="blog-card-image" href=""><img src="tmp/blog-preview-1.jpg" alt=""></a>
-                        <div class="blog-card-meta text-muted">Posted on: <span>14-oct-2020</span></div>
-                        <div class="blog-card-excerpt">Thyroid in Kids: Everything You Need to Know</div>
-                        <a class="blog-card-more" href=""><i class="icon-plus"></i>Read more</a>
-                    </div>
-                </div>
-            </div>
+            <articles-slider :name="$t('common.related_articles')"/>
         </div>
         <div class="my-4 my-lg-5">
-            <h2 class="h1">Shop by categories</h2>
+            <h2 class="h1">{{ $t('common.shop_by_categories') }}</h2>
             <categories/>
         </div>
     </div>

@@ -7,9 +7,19 @@
         <div class="acc my-5 bg-light">
             <div class="acc-form">
                 <div class="acc-content">
-                    <a class="font-weight-bold" href="">Back to login</a>
-                    <h1>Password reset</h1>
-                    <p>You have requested a password reset successfully. An email with new password has been sent to your email account. Please go to <a class="font-weight-bold" href="">login page</a> and log in with new password.</p>
+                    <router-link class="font-weight-bold" :to="{name: 'login'}">
+                        {{ $t('common.back_to_login') }}
+                    </router-link>
+                    <h1></h1>
+                    <p>
+                        {{ $t('common.reset_password.text1') }}
+                        {{ $t('common.reset_password.text2') }}
+                        {{ $t('common.reset_password.text3') }}
+                        <router-link class="font-weight-bold" :to="{name: 'login'}">
+                            {{ $t('common.login_page') }}
+                        </router-link>
+                        {{ $t('common.reset_password.text4') }}
+                    </p>
                 </div>
             </div>
             <div class="acc-info acc-info-image">
@@ -18,7 +28,3 @@
         </div>
     </div>
 </template>
-
-<style scoped>
-
-</style>
