@@ -10,10 +10,12 @@
             </div>
             <div class="acc-form">
                 <div class="acc-content">
-                    <div class="h1 mb-0 text-danger">Error 404</div>
-                    <h1>Page Not Found!</h1>
-                    <p>The page you looking for is not found, please go to main page and start your search there.</p>
-                    <a class="btn btn-primary" href="">Go to homepage</a>
+                    <div class="h1 mb-0 text-danger">{{ $t('common.error') }} 404</div>
+                    <h1>{{ $t('common.error_page.text1') }}</h1>
+                    <p>{{ $t('common.error_page.text2') }}</p>
+                    <router-link class="btn btn-primary" :to="{name: 'home'}">
+                        {{ $t('common.error_page.text3') }}
+                    </router-link>
                 </div>
             </div>
         </div>

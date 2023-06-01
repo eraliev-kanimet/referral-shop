@@ -53,6 +53,38 @@ export const useSiteStore = defineStore('site', {
                     initial: '',
                     content: 'Just letting you know that HFS112787 has finally arrived and all contents within on May 1st. It was order on April 2 and it made it to the States on April 17th then was mis-routed for almost two weeks. The delay was a mistake with the USPS service not yours. Just letting you know. Thank you for your product. I will be ordering again.'
                 },
+            ],
+            faq: [
+                {
+                    id: 1,
+                    question: 'What is the difference between Viagra, Cialis, Levitra, Soft and Regular?',
+                    answer: 'A prescription is not required. Please consult a Health Care Provider before taking this or that medicine. It is important to take into consideration some contra-indications or diseases a patient may have. Only a specialist can prescribe the exact medication and the required dosage.'
+                },
+                {
+                    id: 2,
+                    question: 'Do you require a prescription?',
+                    answer: 'A prescription is not required. Please consult a Health Care Provider before taking this or that medicine. It is important to take into consideration some contra-indications or diseases a patient may have. Only a specialist can prescribe the exact medication and the required dosage.'
+                },
+                {
+                    id: 3,
+                    question: 'What are you shipping methods?',
+                    answer: 'A prescription is not required. Please consult a Health Care Provider before taking this or that medicine. It is important to take into consideration some contra-indications or diseases a patient may have. Only a specialist can prescribe the exact medication and the required dosage.'
+                },
+                {
+                    id: 4,
+                    question: 'What medication do you offer?',
+                    answer: 'A prescription is not required. Please consult a Health Care Provider before taking this or that medicine. It is important to take into consideration some contra-indications or diseases a patient may have. Only a specialist can prescribe the exact medication and the required dosage.'
+                },
+                {
+                    id: 5,
+                    question: 'How can one place an order?',
+                    answer: 'A prescription is not required. Please consult a Health Care Provider before taking this or that medicine. It is important to take into consideration some contra-indications or diseases a patient may have. Only a specialist can prescribe the exact medication and the required dosage.'
+                },
+                {
+                    id: 6,
+                    question: 'What are your available payment methods?',
+                    answer: 'A prescription is not required. Please consult a Health Care Provider before taking this or that medicine. It is important to take into consideration some contra-indications or diseases a patient may have. Only a specialist can prescribe the exact medication and the required dosage.'
+                }
             ]
         }
     }

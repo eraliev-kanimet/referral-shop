@@ -1,8 +1,8 @@
 <script setup>
 import VueTinySlider from '@mentorkadriu/vue-tiny-slider'
-
-import {useArticlesStore} from "../../stores/articles.js";
 import ArticlesItem from "./articles-item.vue";
+
+import {useArticlesStore} from "../../stores/articles.ts";
 
 const articlesStore = useArticlesStore()
 

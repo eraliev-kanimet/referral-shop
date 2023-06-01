@@ -31,7 +31,7 @@
             <li class="dashboard-nav-item"><a class="dashboard-nav-link" href=""><i class="dashboard-nav-icon icon-referrals"></i>Referrals</a></li>
         </ul>
         <div class="alert alert-primary my-4">
-            Your account is not verified. Please visit <a href="#profile-verification">this page</a> to verify it.
+            Your account is not verified. Please visit <a href="/profile-verification">this page</a> to verify it.
         </div>
     </div>
 </template>

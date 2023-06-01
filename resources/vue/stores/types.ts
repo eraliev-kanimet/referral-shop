@@ -8,8 +8,15 @@ type TestimonialsItem = {
     content: string
 }
 
+type FaqItem = {
+    id: number,
+    question: string,
+    answer: string,
+}
+
 export type SiteRootState = {
     testimonials: TestimonialsItem[],
+    faq: FaqItem[],
 }
 
 export type ArticlesItem = {

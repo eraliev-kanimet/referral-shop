@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+import DashboardStatistics from "../../components/dashboard/dashboard-statistics.vue";
 </script>
 
 <template>
@@ -80,46 +81,7 @@
     </div>
     <div class="mb-4 mb-lg-5">
         <div class="h1">Referral statistics</div>
-        <div class="dashboard-stats mt-4">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
-                <div class="col mb-3 mb-lg-0">
-                    <div class="dashboard-stats-item bg-primary">
-                        <div class="dashboard-stats-icon text-primary"><i class="icon-referrals"></i></div>
-                        <div class="dashboard-stats-content">
-                            <div class="dashboard-stats-title">Referrals</div>
-                            <div class="dashboard-stats-num">23</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-3 mb-lg-0">
-                    <div class="dashboard-stats-item">
-                        <div class="dashboard-stats-icon"><i class="icon-wallet"></i></div>
-                        <div class="dashboard-stats-content">
-                            <div class="dashboard-stats-title">Total earnings</div>
-                            <div class="dashboard-stats-num">$380.90</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-3 mb-lg-0">
-                    <div class="dashboard-stats-item bg-info">
-                        <div class="dashboard-stats-icon text-info"><i class="icon-earnings"></i></div>
-                        <div class="dashboard-stats-content">
-                            <div class="dashboard-stats-title">Available</div>
-                            <div class="dashboard-stats-num">$280.90</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-3 mb-lg-0">
-                    <div class="dashboard-stats-item bg-secondary">
-                        <div class="dashboard-stats-icon text-secondary"><i class="icon-spent"></i></div>
-                        <div class="dashboard-stats-content">
-                            <div class="dashboard-stats-title">Spent</div>
-                            <div class="dashboard-stats-num">$0</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <dashboard-statistics/>
     </div>
     <div class="table-responsive my-3">
         <table class="table">

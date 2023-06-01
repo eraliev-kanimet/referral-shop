@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ProductItem from "../../components/products/product-item.vue";
 import ArticlesItem from "../../components/articles/articles-item.vue";
+import DashboardStatistics from "../../components/dashboard/dashboard-statistics.vue";
 
 import {useArticlesStore} from "../../stores/articles";
 
@@ -9,16 +10,16 @@ const articlesStore = useArticlesStore()
 
 <template>
     <div class="mb-4 mb-lg-5">
-        <h1>Latest orders</h1>
+        <h1>{{ $t('common.latest_orders') }}</h1>
         <div class="table-responsive my-3">
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Order #</th>
-                    <th>Date</th>
-                    <th>Products</th>
-                    <th>Price</th>
-                    <th>Status</th>
+                    <th>{{ $t('common.order') }} #</th>
+                    <th>{{ $t('common.date') }}</th>
+                    <th>{{ $t('common.products') }}</th>
+                    <th>{{ $t('common.price') }}</th>
+                    <th>{{ $t('common.status') }}</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -34,60 +35,23 @@ const articlesStore = useArticlesStore()
                 </tbody>
             </table>
         </div>
-        <a class="btn btn-primary" href="">See all orders</a>
+        <router-link class="btn btn-primary" :to="{name: 'orders'}">{{ $t('common.see_all_orders') }}</router-link>
     </div>
     <div class="mb-4 mb-lg-5">
-        <div class="h1">Referral statistics</div>
-        <div class="dashboard-stats mt-4">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
-                <div class="col mb-3 mb-lg-0">
-                    <div class="dashboard-stats-item bg-primary">
-                        <div class="dashboard-stats-icon text-primary"><i class="icon-referrals"></i></div>
-                        <div class="dashboard-stats-content">
-                            <div class="dashboard-stats-title">Referrals</div>
-                            <div class="dashboard-stats-num">23</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-3 mb-lg-0">
-                    <div class="dashboard-stats-item">
-                        <div class="dashboard-stats-icon"><i class="icon-wallet"></i></div>
-                        <div class="dashboard-stats-content">
-                            <div class="dashboard-stats-title">Total earnings</div>
-                            <div class="dashboard-stats-num">$380.90</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-3 mb-lg-0">
-                    <div class="dashboard-stats-item bg-info">
-                        <div class="dashboard-stats-icon text-info"><i class="icon-earnings"></i></div>
-                        <div class="dashboard-stats-content">
-                            <div class="dashboard-stats-title">Available</div>
-                            <div class="dashboard-stats-num">$280.90</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-3 mb-lg-0">
-                    <div class="dashboard-stats-item bg-secondary">
-                        <div class="dashboard-stats-icon text-secondary"><i class="icon-spent"></i></div>
-                        <div class="dashboard-stats-content">
-                            <div class="dashboard-stats-title">Spent</div>
-                            <div class="dashboard-stats-num">$0</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="h1">{{ $t('common.referral_statistics') }}</div>
+        <dashboard-statistics/>
     </div>
     <div class="mb-4 mb-lg-5">
-        <div class="h1">Today top offers</div>
+        <div class="h1">{{ $t('common.today_top_offers') }}</div>
         <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 no-gutters my-4">
             <product-item v-for="i in 10"/>
         </div>
-        <a class="btn btn-primary" href="">See all products</a>
+        <router-link class="btn btn-primary" :to="{name: 'products'}">
+            {{ $t('common.see_all_products') }}
+        </router-link>
     </div>
     <div class="mb-4 mb-lg-5">
-        <div class="h1">You should read this</div>
+        <div class="h1">{{ $t('common.you_should_read_this') }}</div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 my-4">
             <div class="col mb-4" v-for="article in articlesStore.articles">
                 <articles-item :article="article"/>
@@ -95,7 +59,3 @@ const articlesStore = useArticlesStore()
         </div>
     </div>
 </template>
-
-<style scoped>
-
-</style>
