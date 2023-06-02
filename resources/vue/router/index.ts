@@ -1,6 +1,6 @@
 import {createRouter, createWebHistory} from "vue-router";
 import {Middleware, MiddlewareContext} from "./types";
-
+import {useSiteStore} from "../stores/site";
 import routes from "./routes";
 
 const router = createRouter({
@@ -21,6 +21,8 @@ function middlewarePipeline(context: MiddlewareContext, middleware: Middleware[]
 }
 
 router.beforeEach(async (to, from, next) => {
+    await useSiteStore().init()
+
     if (!to.meta.middleware) {
         return next();
     }
