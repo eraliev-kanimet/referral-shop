@@ -7,15 +7,17 @@
         <div class="acc my-5 bg-light">
             <div class="acc-form">
                 <div class="acc-content">
-                    <a class="font-weight-bold" href="">Back to login</a>
-                    <h1>Forgot password?</h1>
-                    <p>Send a link to your email to reset your password</p>
+                    <router-link class="font-weight-bold" :to="{name: 'login'}">
+                        {{ $t('common.back_to_login') }}
+                    </router-link>
+                    <h1>{{ $t('common.forgot_password') }}?</h1>
+                    <p>{{ $t('common.send_link_to_your_email') }}</p>
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" id="email">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary w-100">Send reset link</button>
+                        <button class="btn btn-primary w-100">{{ $t('common.send_reset_link') }}</button>
                     </div>
                 </div>
             </div>
@@ -25,7 +27,3 @@
         </div>
     </div>
 </template>
-
-<style scoped>
-
-</style>

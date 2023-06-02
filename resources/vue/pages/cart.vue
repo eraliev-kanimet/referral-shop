@@ -7,12 +7,12 @@
         <div class="dashboard my-4 my-lg-5">
             <div class="dashboard-content">
                 <div class="d-flex flex-wrap align-items-center">
-                    <h1 class="m-0 mr-auto">Checkout</h1>
+                    <h1 class="m-0 mr-auto">{{ $t('common.checkout') }}</h1>
                     <div class="mr-md-3 pr-md-3 border-md border-left-0 border-bottom-0 border-top-0">
-                        <a href=""><i class="icon-arrow-left icon-inline mr-1"></i>Back to main</a>
+                        <a href=""><i class="icon-arrow-left icon-inline mr-1"></i>{{ $t('common.back_to_main') }}</a>
                     </div>
                     <div class="d-flex flex-wrap">
-                        <div class="my-1 mr-3 d-none d-md-block">Secure checkout. All data is safe and secure.</div>
+                        <div class="my-1 mr-3 d-none d-md-block">{{ $t('common.secure_checkout') }}</div>
                         <div class="footer-secure mt-2 mb-0 my-md-1">
                             <img src="../assets/images/geotrust.png" srcset="../assets/images/geotrust.png 1x, ../assets/images/geotrust@2x.png 2x" alt="">
                             <img src="../assets/images/visa-verified.png" srcset="../assets/images/visa-verified.png 1x, ../assets/images/visa-verified@2x.png 2x" alt="">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="mb-3 mb-lg-4 mt-3">
-                    <div class="m-0 px-2 py-2 px-md-4 py-md-3 bg-primary text-white h2">Products</div>
+                    <div class="m-0 px-2 py-2 px-md-4 py-md-3 bg-primary text-white h2">{{ $t('common.products') }}</div>
                     <div class="px-2 px-md-4 pt-1 pb-3 py-md-3 border border-primary border-top-0">
                         <div class="row">
                             <div class="col-12 col-lg-9">
@@ -30,10 +30,10 @@
                                     <table class="table">
                                         <thead>
                                         <tr>
-                                            <th>Product</th>
-                                            <th>Price</th>
-                                            <th>QTY</th>
-                                            <th>Subtotal</th>
+                                            <th>{{ $t('common.product') }}</th>
+                                            <th>{{ $t('common.price') }}</th>
+                                            <th>{{ $t('common.qty') }}</th>
+                                            <th>{{ $t('common.subtotal') }}</th>
                                             <th></th>
                                         </tr>
                                         </thead>
@@ -41,7 +41,7 @@
                                         <tr>
                                             <td>
                                                 <a class="product-table" href="">
-                                                    <div class="product-table-image border d-none d-sm-flex"><img src="tmp/pills-1.png" alt=""></div>
+                                                    <div class="product-table-image border d-none d-sm-flex"><img src="../assets/tmp/pills-1.png" alt=""></div>
                                                     <div class="product-table-content">Viagra Professional <span class="d-block d-sm-inline">20 Pills x 50mg</span></div>
                                                 </a>
                                             </td>
@@ -57,14 +57,14 @@
                                             <td><a class="text-muted" href=""><i class="icon-trash icon-inline"></i></a></td>
                                         </tr>
                                         <tr>
-                                            <td>Internal balance</td>
+                                            <td>{{ $t('common.internal_balance') }}</td>
                                             <td>-$100</td>
                                             <td></td>
                                             <td><span class="font-weight-bold">-$100</span></td>
                                             <td><a class="text-muted" href=""><i class="icon-trash icon-inline"></i></a></td>
                                         </tr>
                                         <tr class="bg-light">
-                                            <td colspan="3"><strong class="h3">Subtotal:</strong></td>
+                                            <td colspan="3"><strong class="h3">{{ $t('common.subtotal') }}:</strong></td>
                                             <td colspan="2"><span class="h3 text-primary">$36.65</span></td>
                                         </tr>
                                         </tbody>
@@ -75,7 +75,7 @@
                                 <table class="table mb-1">
                                     <thead>
                                     <tr>
-                                        <th>Select free bonus</th>
+                                        <th>{{ $t('common.select_free_bonus') }}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -83,7 +83,7 @@
                                         <td>
                                             <div class="custom-control custom-radio my-2">
                                                 <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                                <label class="custom-control-label" for="customRadio1">No bonus</label>
+                                                <label class="custom-control-label" for="customRadio1">{{ $t('common.no_bonus') }}</label>
                                             </div>
                                             <div class="custom-control custom-radio my-2">
                                                 <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
@@ -104,15 +104,15 @@
                                 <table class="table">
                                     <thead>
                                     <tr>
-                                        <th>Coupon code</th>
+                                        <th>{{ $t('common.coupon_code') }}</th>
                                     </tr>
                                     </thead>
                                     <tbody class="border-0">
                                     <tr>
                                         <td class="p-0 border-0">
                                             <div class="d-flex">
-                                                <input type="text" class="form-control mr-2" placeholder="Coupon code">
-                                                <button class="btn btn-light">Apply</button>
+                                                <input type="text" class="form-control mr-2" :placeholder="$t('common.coupon_code')">
+                                                <button class="btn btn-light">{{ $t('common.apply') }}</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -126,19 +126,13 @@
                     <div class="row">
                         <div class="col-12 col-lg-6">
                             <div class="mb-3 mb-lg-4">
-                                <div class="m-0 px-2 py-2 px-md-4 py-md-3 bg-primary text-white h2">Shipping address</div>
+                                <div class="m-0 px-2 py-2 px-md-4 py-md-3 bg-primary text-white h2">{{ $t('common.shipping_address') }}</div>
                                 <div class="px-3 px-md-4 pt-1 pb-3 py-md-3 border border-primary border-top-0">
                                     <div class="mb-3 mt-3 mt-lg-0">
                                         <div class="row row-cols-1 row-cols-md-2">
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="">First name: <span>*</span></label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="">Last name: <span>*</span></label>
+                                                    <label for="">{{ $t('common.full_name') }}: <span>*</span></label>
                                                     <input type="text" class="form-control">
                                                 </div>
                                             </div>
@@ -146,21 +140,9 @@
                                         <div class="row row-cols-1 row-cols-md-2">
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="">Country: <span>*</span></label>
+                                                    <label for="">{{ $t('common.country') }}: <span>*</span></label>
                                                     <select class="custom-select">
-                                                        <option selected>Select</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                        <option selected>{{ $t('common.select') }}</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
                                                         <option value="3">Three</option>
@@ -169,9 +151,9 @@
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="">State / Province: <span>*</span></label>
+                                                    <label for="">{{ $t('common.state') }}: <span>*</span></label>
                                                     <select class="custom-select">
-                                                        <option selected>Select</option>
+                                                        <option selected>{{ $t('common.select') }}</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
                                                         <option value="3">Three</option>
@@ -182,13 +164,13 @@
                                         <div class="row row-cols-1 row-cols-md-2">
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="">City: <span>*</span></label>
+                                                    <label for="">{{ $t('common.city') }}: <span>*</span></label>
                                                     <input type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="">ZIP / Postal code: <span>*</span></label>
+                                                    <label for="">{{ $t('common.zip') }}: <span>*</span></label>
                                                     <input type="text" class="form-control">
                                                 </div>
                                             </div>
@@ -196,13 +178,13 @@
                                         <div class="row row-cols-1 row-cols-md-2">
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="">Address: <span>*</span></label>
+                                                    <label for="">{{ $t('common.address') }}: <span>*</span></label>
                                                     <input type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="">Phone number: <span>*</span></label>
+                                                    <label for="">{{ $t('common.phone_number') }}: <span>*</span></label>
                                                     <input type="text" class="form-control">
                                                 </div>
                                             </div>
@@ -217,22 +199,16 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="h2">Billing address</div>
+                                        <div class="h2">{{ $t('common.billing_address') }}</div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="billingAddressSame" checked>
-                                            <label class="custom-control-label" for="billingAddressSame" data-toggle="collapse" data-target="#billing" aria-expanded="false" aria-controls="billing">Same as shipping address</label>
+                                            <label class="custom-control-label" for="billingAddressSame" data-toggle="collapse" data-target="#billing" aria-expanded="false" aria-controls="billing">{{ $t('common.same_billing_address') }}</label>
                                         </div>
                                         <div class="collapse pt-3" id="billing">
                                             <div class="row row-cols-1 row-cols-md-2">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="">First name: <span>*</span></label>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label for="">Last name: <span>*</span></label>
+                                                        <label for="">{{ $t('common.full_name') }}: <span>*</span></label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                 </div>
@@ -240,9 +216,9 @@
                                             <div class="row row-cols-1 row-cols-md-2">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="">Country: <span>*</span></label>
+                                                        <label for="">{{ $t('common.country') }}: <span>*</span></label>
                                                         <select class="custom-select">
-                                                            <option selected>Select</option>
+                                                            <option selected>{{ $t('common.select') }}</option>
                                                             <option value="1">One</option>
                                                             <option value="2">Two</option>
                                                             <option value="3">Three</option>
@@ -251,9 +227,9 @@
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="">State / Province: <span>*</span></label>
+                                                        <label for="">{{ $t('common.state') }}: <span>*</span></label>
                                                         <select class="custom-select">
-                                                            <option selected>Select</option>
+                                                            <option selected>{{ $t('common.select') }}</option>
                                                             <option value="1">One</option>
                                                             <option value="2">Two</option>
                                                             <option value="3">Three</option>
@@ -264,13 +240,13 @@
                                             <div class="row row-cols-1 row-cols-md-2">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="">City: <span>*</span></label>
+                                                        <label for="">{{ $t('common.city') }}: <span>*</span></label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="">ZIP / Postal code: <span>*</span></label>
+                                                        <label for="">{{ $t('common.zip') }}: <span>*</span></label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                 </div>
@@ -278,13 +254,13 @@
                                             <div class="row row-cols-1 row-cols-md-2">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="">Address: <span>*</span></label>
+                                                        <label for="">{{ $t('common.address') }}: <span>*</span></label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <label for="">Phone number: <span>*</span></label>
+                                                        <label for="">{{ $t('common.phone_number') }}: <span>*</span></label>
                                                         <input type="text" class="form-control">
                                                     </div>
                                                 </div>
@@ -302,7 +278,7 @@
                                 </div>
                             </div>
                             <div class="mb-3 mb-lg-4">
-                                <div class="m-0 px-2 py-2 px-md-4 py-md-3 bg-primary text-white h2">Shipping options</div>
+                                <div class="m-0 px-2 py-2 px-md-4 py-md-3 bg-primary text-white h2">{{ $t('common.shipping_options') }}</div>
                                 <div class="px-3 px-md-4 pt-1 pb-3 py-md-3 border border-primary border-top-0">
                                     <div class="d-md-none">
                                         <div class="border rounded p-3 my-4">
@@ -312,8 +288,8 @@
                                                     <img src="../assets/images/airmail.svg" class="icon-inline" alt="">
                                                     <strong>AirMail - </strong><span class="text-primary">$12.95</span>
                                                     <small class="text-muted d-block mt-1">
-                                                        <span>Actual delivery time may vary, and it may take up to 2-3 weeks for Air Mail. Online Tracking is not available.</span>
-                                                        <span class="text-danger">Free AirMail shipping available for orders over $200.</span>
+                                                        <span>{{ $t('common.cart_page.text1') }}</span>
+                                                        <span class="text-danger">{{ $t('common.cart_page.text2') }}</span>
                                                     </small>
                                                 </label>
                                             </div>
@@ -325,48 +301,48 @@
                                                     <img src="../assets/images/ems.svg" class="icon-inline" alt="">
                                                     <strong>EMS - </strong><span class="text-primary">$12.95</span>
                                                     <small class="text-muted d-block mt-1">
-                                                        <span>Actual delivery time may vary, and it may take up to 2-3 weeks for Air Mail. Online Tracking is not available.</span>
-                                                        <span class="text-danger">Free AirMail shipping available for orders over $200.</span>
+                                                        <span>{{ $t('common.cart_page.text3') }}</span>
+                                                        <span class="text-danger">{{ $t('common.cart_page.text4') }}</span>
                                                     </small>
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="my-3 mt-md-0 d-none d-md-block">
-                                        <label class="form-label">Shipping type:</label>
+                                        <label class="form-label">{{ $t('common.shipping_type') }}:</label>
                                         <select class="custom-select">
-                                            <option selected="">Air Mail - Free for orders over $200</option>
-                                            <option>EMS - Free for orders over $200</option>
+                                            <option selected="">{{ $t('common.cart_page.text5') }}</option>
+                                            <option>{{ $t('common.cart_page.text6') }}</option>
                                         </select>
                                         <div class="mt-3">
-                                            <div>Actual delivery time may vary, and it may take up to 2-3 weeks for Air Mail. Online Tracking is not available.</div>
-                                            <div class="text-danger">Free AirMail shipping available for orders over $200.</div>
+                                            <div>{{ $t('common.text3') }}</div>
+                                            <div class="text-danger">{{ $t('common.text4') }}</div>
                                         </div>
                                     </div>
-                                    <div class="h2">Shipping insurance</div>
+                                    <div class="h2">{{ $t('common.shipping_insurance') }}</div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="shippingInsurance" checked>
-                                        <label class="custom-control-label" for="shippingInsurance">Add insurance (guaranteed reshipment if delivery failed) - <strong>$6.82</strong></label>
+                                        <label class="custom-control-label" for="shippingInsurance">{{ $t('common.add_insurance') }} - <strong>$6.82</strong></label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6">
                             <div class="mb-3 mb-lg-4">
-                                <div class="m-0 px-2 py-2 px-md-4 py-md-3 bg-primary text-white h2">Payment information</div>
+                                <div class="m-0 px-2 py-2 px-md-4 py-md-3 bg-primary text-white h2">{{ $t('common.payment_information') }}</div>
                                 <div class="px-3 px-md-4 pt-1 pb-3 py-md-3 border border-primary border-top-0">
                                     <div class="mt-3 mt-lg-0">
                                         <div class="form-group">
-                                            <label for="">Select payment type:</label>
+                                            <label for="">{{ $t('common.select_payment_type') }}:</label>
                                             <select class="custom-select payment-methods-select">
-                                                <option selected value="0">Pay with card</option>
-                                                <option value="1">Pay with Crypto</option>
-                                                <option value="2">Pay with PayPal</option>
-                                                <option value="3">Pay with Internal Balance</option>
+                                                <option selected value="0">{{ $t('common.pay_with_card') }}</option>
+                                                <option value="1">{{ $t('common.pay_with') }} Crypto</option>
+                                                <option value="2">{{ $t('common.pay_with') }} PayPal</option>
+                                                <option value="3">{{ $t('common.pay_with') }} {{ $t('common.internal_balance') }}</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Available payment methods:</label>
+                                            <label for="">{{ $t('common.available_payment_methods') }}:</label>
                                             <div class="footer-payment">
                                                 <div><img src="../assets/images/visa.svg" alt=""></div>
                                                 <div><img src="../assets/images/mastercard.svg" alt=""></div>
@@ -383,20 +359,20 @@
                                                 <div class="cc">
                                                     <div class="cc-front">
                                                         <div class="cc-heading">
-                                                            <div class="cc-title">Card Details</div>
+                                                            <div class="cc-title">{{ $t('common.card_details') }}</div>
                                                             <div class="cc-type"></div>
                                                         </div>
                                                         <div class="mb-2">
-                                                            <label class="form-label text-white">Card number: <span>*</span></label>
+                                                            <label class="form-label text-white">{{ $t('common.card_number') }}: <span>*</span></label>
                                                             <input type="text" class="form-control cc-number" placeholder="0000 0000 0000 0000">
                                                         </div>
                                                         <div class="row no-gutters">
                                                             <div class="col-12 col-sm-6 mb-2 mb-sm-0 pr-sm-2">
-                                                                <label class="form-label text-white">Cardholder name: <span>*</span></label>
+                                                                <label class="form-label text-white">{{ $t('common.cardholder_name') }}: <span>*</span></label>
                                                                 <input type="text" class="form-control" placeholder="John Doe">
                                                             </div>
                                                             <div class="col-12 col-sm-6">
-                                                                <label class="form-label text-white">Expiration date: <span>*</span></label>
+                                                                <label class="form-label text-white">{{ $t('common.expiration_date') }}: <span>*</span></label>
                                                                 <div class="row no-gutters">
                                                                     <div class="col-6 pr-1">
                                                                         <select class="custom-select">
@@ -430,17 +406,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="mt-4 alert alert-primary d-none" id="pm-1">Payment instructions will be sent to your email address after you submit the order.</div>
-                                            <div class="mt-4 alert alert-primary d-none" id="pm-2">Payment instructions will be sent to your email address after you submit the order.</div>
+                                            <div class="mt-4 alert alert-primary d-none" id="pm-1">{{ $t('common.alter_payment') }}</div>
                                             <div class="d-none" id="pm-3">
                                                 <div class="form-group">
-                                                    <label for="">Internal balance</label>
+                                                    <label for="">{{ $t('common.internal_balance') }}</label>
                                                     <input type="text" class="form-control" style="width: 120px;" value="$87" disabled>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="mt-4 text-center">
-                                            <button class="btn btn-secondary px-5">Complete order</button>
+                                            <button class="btn btn-secondary px-5">{{ $t('common.complete_order') }}</button>
                                         </div>
                                     </div>
                                 </div>
