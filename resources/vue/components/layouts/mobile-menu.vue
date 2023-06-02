@@ -4,28 +4,28 @@
 
 <template>
     <div class="offcanvas offcanvas-nav">
-        <div class="offcanvas-title bg-light">Main menu</div>
+        <div class="offcanvas-title bg-light">{{ $t('common.main_menu') }}</div>
         <i class="offcanvas-close icon-close"></i>
         <div class="offcanvas-content">
             <ul class="offcanvas-menu">
-                <li class="active"><a href="">Home</a></li>
-                <li><a href="">Products</a></li>
-                <li><a href="">About us</a></li>
-                <li><a href="">Articles</a></li>
-                <li><a href="">Video</a></li>
-                <li><a href="">FAQ</a></li>
-                <li><a href="">Policy</a></li>
-                <li><a href="">Testimonials</a></li>
-                <li><a href="">Contact</a></li>
+                <li class="active"><a href="">{{ $t('common.home_') }}</a></li>
+                <li><a href="">{{ $t('common.products') }}</a></li>
+                <li><a href="">{{ $t('common.about_us') }}</a></li>
+                <li><a href="">{{ $t('common.articles_') }}</a></li>
+                <li><a href="">{{ $t('common.video_') }}</a></li>
+                <li><a href="">{{ $t('common.faq') }}</a></li>
+                <li><a href="">{{ $t('common.policy') }}</a></li>
+                <li><a href="">{{ $t('common.testimonials') }}</a></li>
+                <li><a href="">{{ $t('common.contact_us') }}</a></li>
             </ul>
         </div>
         <div class="offcanvas-bottom">
             <ul class="offcanvas-menu offcanvas-user">
-                <li><a href="">Log in</a></li>
-                <li><a href="">Sign up</a></li>
+                <li><a href="">{{ $t('common.login') }}</a></li>
+                <li><a href="">{{ $t('common.sign_up') }}</a></li>
             </ul>
             <div class="offcanvas-currency">
-                <label>Select currency:</label>
+                <label>{{ $t('common.select_currency') }}:</label>
                 <select class="form-control">
                     <option>USD</option>
                     <option>AUD</option>
@@ -35,7 +35,7 @@
                 </select>
             </div>
             <div class="offcanvas-lang">
-                <label>Select language:</label>
+                <label>{{ $t('common.select_language') }}:</label>
                 <div class="offcanvas-flags">
                     <a href=""><img src="" alt=""></a>
                     <a href=""><img src="" alt=""></a>

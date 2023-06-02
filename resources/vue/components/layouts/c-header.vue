@@ -17,7 +17,7 @@
                     </div>
                     <div class="header-top-phone-item d-none d-md-flex">
                         <i class="icon-phone"></i>
-                        <a href="">Request callback</a>
+                        <a href="">{{ $t('common.request_callback') }}</a>
                     </div>
                 </div>
                 <div class="header-top-lang dropdown d-none d-lg-block">
@@ -47,19 +47,19 @@
                 <a class="logo" href=""><img src="../../assets/images/logo.svg" alt=""></a>
                 <i class="nav-toggle icon-menu d-xl-none"></i>
                 <ul class="header-menu d-none d-xl-flex">
-                    <li class="active"><a href="">Home</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="">About us</a></li>
-                    <li><a href="">Articles</a></li>
-                    <li><a href="">Video</a></li>
-                    <li><a href="">FAQ</a></li>
-                    <li><a href="">Policy</a></li>
-                    <li><a href="">Testimonials</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li class="active"><a href="">{{ $t('common.home_') }}</a></li>
+                    <li><a href="">{{ $t('common.products') }}</a></li>
+                    <li><a href="">{{ $t('common.about_us') }}</a></li>
+                    <li><a href="">{{ $t('common.articles_') }}</a></li>
+                    <li><a href="">{{ $t('common.video_') }}</a></li>
+                    <li><a href="">{{ $t('common.faq') }}</a></li>
+                    <li><a href="">{{ $t('common.policy') }}</a></li>
+                    <li><a href="">{{ $t('common.testimonials') }}</a></li>
+                    <li><a href="">{{ $t('common.contact_us') }}</a></li>
                 </ul>
                 <div class="header-buttons d-none d-xl-block">
-                    <a class="btn btn-link" href="">Log in</a>
-                    <a class="btn btn-primary" href="">Sign up</a>
+                    <a class="btn btn-link" href="">{{ $t('common.login') }}</a>
+                    <a class="btn btn-primary" href="">{{ $t('common.sign_up') }}</a>
                 </div>
             </div>
         </div>
