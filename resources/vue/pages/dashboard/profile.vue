@@ -85,17 +85,17 @@
             </div>
             <div class="tabs-panel" id="profile-shipay">
                 <div class="mb-4 mb-lg-5">
-                    <div class="h2">Shipping address</div>
+                    <div class="h2"></div>
                     <div class="form-group">
-                        <label for="">Full name:</label>
+                        <label for="">{{ $t('common.full_name') }}:</label>
                         <input type="text" class="form-control">
                     </div>
                     <div class="row row-cols-1 row-cols-md-2">
                         <div class="col">
                             <div class="form-group">
-                                <label for="">Country:</label>
+                                <label for="">{{ $t('common.country') }}:</label>
                                 <select class="custom-select">
-                                    <option selected>Select</option>
+                                    <option selected>{{ $t('common.select') }}</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
@@ -104,9 +104,9 @@
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="">State / Province:</label>
+                                <label for="">{{ $t('common.state') }}:</label>
                                 <select class="custom-select">
-                                    <option selected>Select</option>
+                                    <option selected>{{ $t('common.select') }}</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
@@ -117,13 +117,13 @@
                     <div class="row row-cols-1 row-cols-md-2">
                         <div class="col">
                             <div class="form-group">
-                                <label for="">City:</label>
+                                <label for="">{{ $t('common.city') }}:</label>
                                 <input type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="">ZIP / Postal code:</label>
+                                <label for="">{{ $t('common.zip') }}:</label>
                                 <input type="text" class="form-control">
                             </div>
                         </div>
@@ -131,35 +131,36 @@
                     <div class="row row-cols-1 row-cols-md-2">
                         <div class="col">
                             <div class="form-group">
-                                <label for="">Address:</label>
+                                <label for="">{{ $t('common.address') }}:</label>
                                 <input type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="">Apt, suite etc.:</label>
+                                <label for="">{{ $t('common.apt_suite_etc') }}:</label>
                                 <input type="text" class="form-control">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="mb-4 mb-lg-5">
-                    <div class="h2">Billing address</div>
+                    <div class="h2">{{ $t('common.billing_address') }}</div>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="billingAddressSame" checked>
-                        <label class="custom-control-label" for="billingAddressSame" data-toggle="collapse" data-target="#billing" aria-expanded="false" aria-controls="billing">Same as billing address</label>
+                        <label class="custom-control-label" for="billingAddressSame" data-toggle="collapse"
+                               data-target="#billing" aria-expanded="false" aria-controls="billing">{{ $t('common.same_billing_address') }}</label>
                     </div>
                     <div class="collapse pt-3" id="billing">
                         <div class="form-group">
-                            <label for="">Full name:</label>
+                            <label for="">{{ $t('common.full_name') }}:</label>
                             <input type="text" class="form-control">
                         </div>
                         <div class="row row-cols-1 row-cols-md-2">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="">Country:</label>
+                                    <label for="">{{ $t('common.country') }}:</label>
                                     <select class="custom-select">
-                                        <option selected>Select</option>
+                                        <option selected>{{ $t('common.select') }}</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -168,9 +169,9 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="">State / Province:</label>
+                                    <label for="">{{ $t('common.state') }}:</label>
                                     <select class="custom-select">
-                                        <option selected>Select</option>
+                                        <option selected>{{ $t('common.select') }}</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -181,13 +182,13 @@
                         <div class="row row-cols-1 row-cols-md-2">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="">City:</label>
+                                    <label for="">{{ $t('common.city') }}:</label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="">ZIP / Postal code:</label>
+                                    <label for="">{{ $t('common.zip') }}:</label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
@@ -195,13 +196,13 @@
                         <div class="row row-cols-1 row-cols-md-2">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="">Address:</label>
+                                    <label for="">{{ $t('common.address') }}:</label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="">Apt, suite etc.:</label>
+                                    <label for="">{{ $t('common.apt_suite_etc') }}:</label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
@@ -209,47 +210,51 @@
                     </div>
                 </div>
                 <div class="mb-4 mb-lg-5">
-                    <div class="h2">Payment information</div>
+                    <div class="h2">{{ $t('common.payment_information') }}</div>
                     <div class="row row-cols-1 row-cols-md-2">
                         <div class="col">
                             <div class="form-group">
-                                <label for="">Add new or edit existent card:</label>
+                                <label for="">{{ $t('common.profile_page.text2') }}:</label>
                                 <select class="custom-select">
-                                    <option selected>Add new</option>
-                                    <option value="1">Edit **** **** **** 1234</option>
-                                    <option value="2">Edit **** **** **** 5678</option>
+                                    <option selected>{{ $t('common.add_new') }}</option>
+                                    <option value="1">{{ $t('common.edit') }} **** **** **** 1234</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="creditcard my-2">
                         <div class="creditcard-front">
-                            <div class="h2">Card details</div>
+                            <div class="h2">{{ $t('common.card_details') }}</div>
                             <div class="form-group">
-                                <label for="">Your card number: <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control creditcard-number" placeholder="0000 0000 0000 0000" maxlength="19">
+                                <label for="">{{ $t('common.your_card_number') }}: <span
+                                    class="text-danger">*</span></label>
+                                <input type="text" class="form-control creditcard-number"
+                                       placeholder="0000 0000 0000 0000"
+                                       maxlength="19">
                             </div>
                             <div class="row no-gutters">
                                 <div class="col-12 col-sm-6 pr-sm-2">
                                     <div class="form-group">
-                                        <label for="">Cardholder name: <span class="text-danger">*</span></label>
+                                        <label for="">{{ $t('common.cardholder_name') }}: <span
+                                            class="text-danger">*</span></label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group">
-                                        <label for="">Expiry date: <span class="text-danger">*</span></label>
+                                        <label for="">{{ $t('common.expiry_date') }}: <span
+                                            class="text-danger">*</span></label>
                                         <div class="row no-gutters">
                                             <div class="col pr-2">
                                                 <select class="custom-select">
-                                                    <option selected="">Month</option>
+                                                    <option selected="">{{ $t('common.month') }}</option>
                                                     <option value="1">01</option>
                                                     <option value="2">02</option>
                                                 </select>
                                             </div>
                                             <div class="col">
                                                 <select class="custom-select">
-                                                    <option selected="">Year</option>
+                                                    <option selected="">{{ $t('common.year') }}</option>
                                                     <option value="1">2022</option>
                                                     <option value="2">2023</option>
                                                 </select>
@@ -274,8 +279,11 @@
             <div class="tabs-panel" id="profile-verification">
                 <div class="my-4 my-lg-5">
                     <div class="input-group mb-4">
-                        <div class="form-control bg-light border-0 rounded"><a class="font-weight-bold" href="">some-photo.jpg</a></div>
-                        <div class="input-group-append"><a class="btn" href=""><i class="icon-close icon-inline"></i></a></div>
+                        <div class="form-control bg-light border-0 rounded"><a class="font-weight-bold" href="">some-photo.jpg</a>
+                        </div>
+                        <div class="input-group-append"><a class="btn" href=""><i
+                            class="icon-close icon-inline"></i></a>
+                        </div>
                     </div>
                     <div class="id">
                         <div class="id-preview bg-light p-3 rounded"><img src="../../assets/images/id.svg" alt=""></div>
@@ -287,8 +295,12 @@
                                     <div class="d-inline-block mb-3">
                                         <div class="border rounded d-flex align-items-center p-1 pr-5">
                                             <input type="file" class="custom-upload-input d-none">
-                                            <button class="custom-upload-btn btn btn-light btn-sm mr-2">{{ $t('common.choose_file') }}...</button>
-                                            <span class="custom-upload-filename text-muted">{{ $t('common.no_file_chosen') }}</span>
+                                            <button class="custom-upload-btn btn btn-light btn-sm mr-2">
+                                                {{ $t('common.choose_file') }}...
+                                            </button>
+                                            <span class="custom-upload-filename text-muted">
+                                            {{ $t('common.no_file_chosen') }}
+                                        </span>
                                         </div>
                                     </div>
                                 </div>
