@@ -38,7 +38,9 @@
             </div>
             <div class="footer-main my-4 my-md-5">
                 <div class="footer-left mt-3 mt-lg-0">
-                    <a class="logo" href=""><img src="../../assets/images/logo.svg" alt=""></a>
+                    <router-link class="logo" :to="{name: 'home'}">
+                        <img src="../../assets/images/logo.svg" alt="">
+                    </router-link>
                     <p class="footer-address my-3">{{ $t('common.address_text.text1') }} <br> {{ $t('common.address_text.text2') }}</p>
                     <div class="footer-secure">
                         <img src="../../assets/images/geotrust.png" srcset="../../assets/images/geotrust.png 1x, ../../assets/images/geotrust@2x.png 2x" alt="">
@@ -59,25 +61,39 @@
                         <div class="col mb-3 mb-md-0">
                             <h4 class="footer-title">{{ $t('common.need_help') }}</h4>
                             <ul class="footer-support">
-                                <li><img src="" alt=""><strong>US: +1 (888) 243-74-06</strong></li>
-                                <li><img src="" alt=""><span>GB: +44 (800) 041-87-44</span></li>
+                                <li>
+                                    <span class="flag-icon flag-icon-US mr-1"></span>
+                                    <strong>US: +1 (888) 243-74-06</strong>
+                                </li>
+                                <li>
+                                    <span class="flag-icon flag-icon-GB mr-1"></span>
+                                    <span>GB: +44 (800) 041-87-44</span>
+                                </li>
                             </ul>
                             <ul class="footer-support">
-                                <li><i class="icon-h"></i><a href="">{{ $t('common.customer_support') }}</a></li>
+                                <li><i class="icon-h"></i><a href="mailto:inbox@hfs-pharm.com">{{ $t('common.customer_support') }}</a></li>
                                 <li><i class="icon-envelope"></i><a href="mailto:inbox@hfs-pharm.com">inbox@hfs-pharm.com</a></li>
                             </ul>
                         </div>
                         <div class="col mb-3 mb-md-0">
                             <h4 class="footer-title">{{ $t('common.information') }}</h4>
                             <ul class="footer-menu">
-                                <li><a href="">Erectile Dysfunction</a></li>
-                                <li><a href="">Man's Health</a></li>
-                                <li><a href="">Antibiotics</a></li>
-                                <li><a href="">Weight Loss</a></li>
-                                <li><a href="">{{ $t('common.contact_us') }}</a></li>
-                                <li><a href="">{{ $t('common.testimonials') }}</a></li>
-                                <li><a href="">{{ $t('common.home_') }}</a></li>
-                                <li><a href="">{{ $t('common.bestsellers') }}</a></li>
+                                <li><router-link :to="{name: 'products'}">Erectile Dysfunction</router-link></li>
+                                <li><router-link :to="{name: 'products'}">Man's Health</router-link></li>
+                                <li><router-link :to="{name: 'products'}">Antibiotics</router-link></li>
+                                <li><router-link :to="{name: 'products'}">Weight Loss</router-link></li>
+                                <li>
+                                    <router-link :to="{name: 'contact_us'}">{{ $t('common.contact_us') }}</router-link>
+                                </li>
+                                <li>
+                                    <router-link :to="{name: 'testimonials'}">
+                                        {{ $t('common.testimonials') }}
+                                    </router-link>
+                                </li>
+                                <li><router-link :to="{name: 'home'}">{{ $t('common.home_') }}</router-link></li>
+                                <li>
+                                    <router-link :to="{name: 'products'}">{{ $t('common.bestsellers') }}</router-link>
+                                </li>
                             </ul>
                             <form action="" class="footer-subscribe">
                                 <div class="row no-gutters">

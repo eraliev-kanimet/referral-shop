@@ -71,7 +71,7 @@ return [
         'text2' => 'to our community',
         'text3' => 'We are here to make you and your family fun and happy, hale and hearty, fresh and active. Shop for healthy lifestyle safe and easy!',
         'text4' => 'More than 17k people joined us.',
-        'text5' => "'Now it's your turn...'",
+        'text5' => "Now it's your turn...",
         'text6' => 'Already have an account?',
         'text7' => 'to login!',
         'text8' => 'Use social account to signup',

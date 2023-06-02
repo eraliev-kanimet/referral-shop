@@ -8,21 +8,21 @@
         <i class="offcanvas-close icon-close"></i>
         <div class="offcanvas-content">
             <ul class="offcanvas-menu">
-                <li class="active"><a href="">{{ $t('common.home_') }}</a></li>
-                <li><a href="">{{ $t('common.products') }}</a></li>
-                <li><a href="">{{ $t('common.about_us') }}</a></li>
-                <li><a href="">{{ $t('common.articles_') }}</a></li>
-                <li><a href="">{{ $t('common.video_') }}</a></li>
-                <li><a href="">{{ $t('common.faq') }}</a></li>
-                <li><a href="">{{ $t('common.policy') }}</a></li>
-                <li><a href="">{{ $t('common.testimonials') }}</a></li>
-                <li><a href="">{{ $t('common.contact_us') }}</a></li>
+                <li class="active"><router-link :to="{name: 'home'}">{{ $t('common.home_') }}</router-link></li>
+                <li><router-link :to="{name: 'products'}">{{ $t('common.products') }}</router-link></li>
+                <li><router-link :to="{name: 'about'}">{{ $t('common.about_us') }}</router-link></li>
+                <li><router-link :to="{name: 'articles'}">{{ $t('common.articles_') }}</router-link></li>
+                <li><router-link :to="{name: 'video'}">{{ $t('common.video_') }}</router-link></li>
+                <li><router-link :to="{name: 'faq'}">{{ $t('common.faq') }}</router-link></li>
+                <li><router-link :to="{name: 'policy'}">{{ $t('common.policy') }}</router-link></li>
+                <li><router-link :to="{name: 'testimonials'}">{{ $t('common.testimonials') }}</router-link></li>
+                <li><router-link :to="{name: 'contact_us'}">{{ $t('common.contact_us') }}</router-link></li>
             </ul>
         </div>
         <div class="offcanvas-bottom">
             <ul class="offcanvas-menu offcanvas-user">
-                <li><a href="">{{ $t('common.login') }}</a></li>
-                <li><a href="">{{ $t('common.sign_up') }}</a></li>
+                <li><router-link :to="{name: 'login'}">{{ $t('common.login') }}</router-link></li>
+                <li><router-link :to="{name: 'sign_up'}">{{ $t('common.sign_up') }}</router-link></li>
             </ul>
             <div class="offcanvas-currency">
                 <label>{{ $t('common.select_currency') }}:</label>

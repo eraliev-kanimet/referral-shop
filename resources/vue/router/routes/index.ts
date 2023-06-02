@@ -48,9 +48,9 @@ const routes: RouteRecordRaw[] = [
                 component: () => import('../../pages/cart.vue')
             },
             {
-                path: 'contact-us',
-                name: 'contact-us',
-                component: () => import('../../pages/contact-us.vue')
+                path: 'contact_us',
+                name: 'contact_us',
+                component: () => import('../../pages/contact_us.vue')
             },
             {
                 path: 'faq',
@@ -78,14 +78,14 @@ const routes: RouteRecordRaw[] = [
                 component: () => import('../../pages/policy.vue')
             },
             {
-                path: 'reset-password',
-                name: 'reset-password',
-                component: () => import('../../pages/reset-password.vue')
+                path: 'reset_password',
+                name: 'reset_password',
+                component: () => import('../../pages/reset_password.vue')
             },
             {
-                path: 'signup',
-                name: 'signup',
-                component: () => import('../../pages/signup.vue')
+                path: 'sign_up',
+                name: 'sign_up',
+                component: () => import('../../pages/sign_up.vue')
             },
             {
                 path: 'testimonials',

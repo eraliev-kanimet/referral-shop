@@ -15,7 +15,7 @@ import TestimonialsSlider from "../components/testimonials/testimonials-slider.v
                         </h1>
                         <p class="intro-description lead">{{ $t('common.home.text3') }}</p>
                         <div class="intro-buttons">
-                            <router-link class="btn btn-primary btn-lg" :to="{name: 'signup'}">
+                            <router-link class="btn btn-primary btn-lg" :to="{name: 'sign_up'}">
                                 {{ $t('common.sign_up_now') }}
                             </router-link>
                             <router-link class="btn btn-secondary btn-lg" :to="{name: 'faq'}">
