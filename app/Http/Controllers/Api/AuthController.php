@@ -13,17 +13,27 @@ class AuthController extends Controller
 {
     public function register(RegisterRequest $request)
     {
-        $user = User::create($request->all());
+        $user = User::create($request->validated());
 
         Auth::login($user);
 
-        return new UserResource(Auth::user());
+        $user = Auth::user();
+
+        return response()->json([
+            'user' => new UserResource($user),
+            'token' => $user->createToken('kanimet')->accessToken,
+        ]);
     }
 
     public function login(LoginRequest $request)
     {
-        if (Auth::attempt($request->all())) {
-            return new UserResource(Auth::user());
+        if (Auth::attempt($request->validated())) {
+            $user = Auth::user();
+
+            return response()->json([
+                'user' => new UserResource($user),
+                'token' => $user->createToken('kanimet')->accessToken,
+            ]);
         }
 
         return response()->json(['error' => 'Unauthorised'], 401);

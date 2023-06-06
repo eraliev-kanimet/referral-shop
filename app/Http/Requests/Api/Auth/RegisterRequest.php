@@ -12,15 +12,19 @@ class RegisterRequest extends FormRequest
         return [
             'email' => ['bail', 'required', 'email', 'unique:users'],
             'password' => ['bail', 'required', 'confirmed', 'min:8'],
-            'phone' => ['bail', 'required', 'number']
+            'phone' => ['bail', 'required', 'numeric']
         ];
     }
 
-    protected function passedValidation(): void
+    public function validated($key = null, $default = null)
     {
-        $this->replace([
-            'password' => Hash::make($this->get('password')),
-            'phone' => '+' . $this->get('phone')
-        ]);
+        $validated = parent::validated($key, $default);
+
+        if (is_array($validated)) {
+            $validated['password'] = Hash::make($validated['password']);
+            $validated['phone'] = '+' . $validated['phone'];
+        }
+
+        return $validated;
     }
 }

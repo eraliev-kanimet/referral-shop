@@ -18,8 +18,7 @@ class UserResource extends JsonResource
         return [
             'id' => $this->resource->id,
             'email' => $this->resource->email,
-            'phone' => $this->resource->phone,
-            'token' => $this->resource->createToken('kanimet')->accessToken
+            'phone' => $this->resource->phone
         ];
     }
 }
