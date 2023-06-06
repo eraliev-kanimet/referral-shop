@@ -1,6 +1,11 @@
 import axios from "../plugins/axios";
-import {SiteResponse} from "./types";
+import {User} from "../stores/types";
 
-export const Init = async (): Promise<SiteResponse> => {
-    return await axios.get('index').then(response => response.data)
+type SiteResponse = {
+    isAuth: boolean;
+    country: string;
+    user: User
 }
+
+export const Init = async (): Promise<SiteResponse> => await axios.get('index')
+    .then(response => response.data)
