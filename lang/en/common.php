@@ -293,4 +293,5 @@ return [
         'text3_1' => 'Online support 24/7',
         'text3_2' => 'Always ready to assist',
     ],
+    'unauthorised' => 'Unauthorised',
 ];

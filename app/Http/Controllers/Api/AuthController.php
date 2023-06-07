@@ -15,10 +15,6 @@ class AuthController extends Controller
     {
         $user = User::create($request->validated());
 
-        Auth::login($user);
-
-        $user = Auth::user();
-
         return response()->json([
             'user' => new UserResource($user),
             'token' => $user->createToken('kanimet')->accessToken,
@@ -36,6 +32,9 @@ class AuthController extends Controller
             ]);
         }
 
-        return response()->json(['error' => 'Unauthorised'], 401);
+        return response()->json(['errors' => [
+            'email' => [__('common.unauthorised')],
+            'password' => [__('common.unauthorised')],
+        ]], 401);
     }
 }
