@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import {useUserStore} from "../stores/user";
+
 import Categories from "../components/products/categories.vue";
 import ArticlesSlider from "../components/articles/articles-slider.vue";
 import TestimonialsSlider from "../components/testimonials/testimonials-slider.vue";
+
+const userStore = useUserStore()
 </script>
 
 <template>
@@ -15,7 +19,7 @@ import TestimonialsSlider from "../components/testimonials/testimonials-slider.v
                         </h1>
                         <p class="intro-description lead">{{ $t('common.home.text3') }}</p>
                         <div class="intro-buttons">
-                            <router-link class="btn btn-primary btn-lg" :to="{name: 'sign_up'}">
+                            <router-link class="btn btn-primary btn-lg mr-1" :to="{name: 'sign_up'}" v-if="!userStore.isAuth">
                                 {{ $t('common.sign_up_now') }}
                             </router-link>
                             <router-link class="btn btn-secondary btn-lg" :to="{name: 'faq'}">
@@ -41,7 +45,7 @@ import TestimonialsSlider from "../components/testimonials/testimonials-slider.v
         </div>
         <div class="features my-4 my-lg-5">
             <div class="row row-cols-1 row-cols-lg-3">
-                <div class="col mb-3 mb-lg-0">
+                <div class="col d-lg-flex align-items-lg-stretch mb-3 mb-lg-0">
                     <div class="features-item features-item-1">
                         <div class="features-item-title">{{ $t('common.home.text4') }}</div>
                         <div class="features-item-description">{{ $t('common.home.text5') }}</div>
@@ -50,7 +54,7 @@ import TestimonialsSlider from "../components/testimonials/testimonials-slider.v
                         </router-link>
                     </div>
                 </div>
-                <div class="col mb-3 mb-lg-0">
+                <div class="col d-lg-flex align-items-lg-stretch mb-3 mb-lg-0">
                     <div class="features-item features-item-2">
                         <div class="features-item-title">{{ $t('common.home.text6') }}</div>
                         <div class="features-item-description">{{ $t('common.home.text7') }}</div>
@@ -59,7 +63,7 @@ import TestimonialsSlider from "../components/testimonials/testimonials-slider.v
                         </router-link>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-lg-flex align-items-lg-stretch">
                     <div class="features-item features-item-3">
                         <div class="features-item-title">{{ $t('common.home.text8') }}</div>
                         <div class="features-item-description">{{ $t('common.home.text9') }}</div>

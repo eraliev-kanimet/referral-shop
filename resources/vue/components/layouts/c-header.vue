@@ -1,5 +1,10 @@
 <script setup lang="ts">
+import {useRoute} from "vue-router";
 
+import {useUserStore} from "../../stores/user";
+
+const route = useRoute()
+const userStore = useUserStore()
 </script>
 
 <template>
@@ -49,19 +54,62 @@
                 </router-link>
                 <i class="nav-toggle icon-menu d-xl-none"></i>
                 <ul class="header-menu d-none d-xl-flex">
-                    <li class="active"><router-link :to="{name: 'home'}">{{ $t('common.home_') }}</router-link></li>
-                    <li><router-link :to="{name: 'products'}">{{ $t('common.products') }}</router-link></li>
-                    <li><router-link :to="{name: 'about'}">{{ $t('common.about_us') }}</router-link></li>
-                    <li><router-link :to="{name: 'articles'}">{{ $t('common.articles_') }}</router-link></li>
-                    <li><router-link :to="{name: 'video'}">{{ $t('common.video_') }}</router-link></li>
-                    <li><router-link :to="{name: 'faq'}">{{ $t('common.faq') }}</router-link></li>
-                    <li><router-link :to="{name: 'policy'}">{{ $t('common.policy') }}</router-link></li>
-                    <li><router-link :to="{name: 'testimonials'}">{{ $t('common.testimonials') }}</router-link></li>
-                    <li><router-link :to="{name: 'contact_us'}">{{ $t('common.contact_us') }}</router-link></li>
+                    <li :class="{active: route.name === 'home'}">
+                        <router-link :to="{name: 'home'}">{{ $t('common.home_') }}</router-link>
+                    </li>
+                    <li :class="{active: route.name === 'products'}">
+                        <router-link :to="{name: 'products'}">{{ $t('common.products') }}</router-link>
+                    </li>
+                    <li :class="{active: route.name === 'about'}">
+                        <router-link :to="{name: 'about'}">{{ $t('common.about_us') }}</router-link>
+                    </li>
+                    <li :class="{active: route.name === 'articles'}">
+                        <router-link :to="{name: 'articles'}">{{ $t('common.articles_') }}</router-link>
+                    </li>
+                    <li :class="{active: route.name === 'video'}">
+                        <router-link :to="{name: 'video'}">{{ $t('common.video_') }}</router-link>
+                    </li>
+                    <li :class="{active: route.name === 'faq'}">
+                        <router-link :to="{name: 'faq'}">{{ $t('common.faq') }}</router-link>
+                    </li>
+                    <li :class="{active: route.name === 'policy'}">
+                        <router-link :to="{name: 'policy'}">{{ $t('common.policy') }}</router-link>
+                    </li>
+                    <li :class="{active: route.name === 'testimonials'}">
+                        <router-link :to="{name: 'testimonials'}">{{ $t('common.testimonials') }}</router-link>
+                    </li>
+                    <li :class="{active: route.name === 'contact_us'}">
+                        <router-link :to="{name: 'contact_us'}">{{ $t('common.contact_us') }}</router-link>
+                    </li>
                 </ul>
-                <div class="header-buttons d-none d-xl-block">
-                    <router-link class="btn btn-link" :to="{name: 'login'}">{{ $t('common.login') }}</router-link>
-                    <router-link class="btn btn-primary" :to="{name: 'sign_up'}">{{ $t('common.sign_up') }}</router-link>
+                <div class="dashboard-buttons" v-if="userStore.isAuth">
+                    <router-link class="dashboard-buttons-item" :to="{name: 'dashboard'}">
+                        <div class="dashboard-buttons-icon">
+                            <i class="icon-user"></i>
+                        </div>
+                    </router-link>
+                    <router-link class="dashboard-buttons-item" :to="{name: 'favorites'}">
+                        <div class="dashboard-buttons-icon">
+                            <i class="icon-heart"></i><span class="badge badge-secondary">0</span>
+                        </div>
+                    </router-link>
+                    <a class="dashboard-buttons-item dashboard-buttons-cart" href="">
+                        <div class="dashboard-buttons-icon">
+                            <i class="icon-cart"></i>
+                            <span class="badge badge-secondary">0</span>
+                        </div>
+                        <div class="dashboard-buttons-cart-content">
+                            {{ $t('common.total') }} <strong>$0.00</strong>
+                        </div>
+                    </a>
+                </div>
+                <div class="header-buttons d-none d-xl-block" v-else>
+                    <router-link class="btn btn-link" :to="{name: 'login'}">
+                        {{ $t('common.login') }}
+                    </router-link>
+                    <router-link class="btn btn-primary" :to="{name: 'sign_up'}">
+                        {{ $t('common.sign_up') }}
+                    </router-link>
                 </div>
             </div>
         </div>
