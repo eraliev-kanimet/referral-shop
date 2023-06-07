@@ -42,5 +42,6 @@ export type User = {
 
 export type UserRootState = {
     user: User|null,
-    isAuth: boolean
+    isAuth: boolean,
+    token: string
 }

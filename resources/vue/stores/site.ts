@@ -95,8 +95,10 @@ export const useSiteStore = defineStore('site', {
     actions: {
         async init() {
             if (this.is_loading) {
-                await Init().then(response => {
-                    useUserStore().$patch((state) => {
+                const userStore = useUserStore()
+
+                await Init(userStore.token).then(response => {
+                    userStore.$patch((state) => {
                         state.isAuth = response.isAuth;
 
                         if (response.isAuth) {

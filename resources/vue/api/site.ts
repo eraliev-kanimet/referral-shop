@@ -7,5 +7,10 @@ type SiteResponse = {
     user: User
 }
 
-export const Init = async (): Promise<SiteResponse> => await axios.get('index')
-    .then(response => response.data)
+export const Init = async (token: string): Promise<SiteResponse> => {
+    return await axios.get('index', {
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
+    }).then(response => response.data)
+}
