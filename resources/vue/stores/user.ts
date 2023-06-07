@@ -1,9 +1,21 @@
 import {defineStore} from "pinia";
-import {UserRootState} from "./types";
+import {User, UserRootState} from "./types";
 
 export const useUserStore = defineStore('user', {
     state: (): UserRootState => ({
         user: null,
-        isAuth: false
-    })
+        isAuth: false,
+        token: localStorage.getItem('token') ?? ''
+    }),
+    actions: {
+        setUser(user: User, token: string, rememberMe: boolean = true) {
+            this.user = user;
+            this.token = token;
+            this.isAuth = true
+
+            if (rememberMe) {
+                localStorage.setItem('token', token)
+            }
+        }
+    }
 })
