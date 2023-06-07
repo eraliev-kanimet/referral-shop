@@ -8,8 +8,14 @@ import i18n from "./plugins/i18n"
 import 'bootstrap'
 import './assets/scss/app.scss'
 
-createApp(App)
-    .use(createPinia())
-    .use(router)
-    .use(i18n)
-    .mount('#app')
+import showError from "./directives/show-error";
+
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(router)
+app.use(i18n)
+
+app.directive('show-error', showError)
+
+app.mount('#app')

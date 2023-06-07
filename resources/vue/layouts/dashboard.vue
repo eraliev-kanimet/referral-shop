@@ -23,7 +23,3 @@ import DashboardSidebar from "../components/dashboard/dashboard-sidebar.vue";
     <c-footer/>
     <mobile-menu/>
 </template>
-
-<style scoped>
-
-</style>

@@ -21,7 +21,7 @@ import TestimonialsSlider from "../components/testimonials/testimonials-slider.v
                 </div>
                 <h2>{{ $t('common.video.text2') }}</h2>
                 <p class="my-3">{{ $t('common.video.text3') }}</p>
-                <router-link class="btn btn-primary btn-lg" :to="{name: 'signup'}">
+                <router-link class="btn btn-primary btn-lg" :to="{name: 'sign_up'}">
                     {{ $t('common.sign_up_now') }}
                 </router-link>
             </div>

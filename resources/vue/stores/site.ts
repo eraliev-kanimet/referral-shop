@@ -1,5 +1,7 @@
 import {defineStore} from "pinia";
 import {SiteRootState} from "./types";
+import {useUserStore} from "./user";
+import {Init} from "../api/site";
 
 export const useSiteStore = defineStore('site', {
     state: (): SiteRootState => {
@@ -85,7 +87,30 @@ export const useSiteStore = defineStore('site', {
                     question: 'What are your available payment methods?',
                     answer: 'A prescription is not required. Please consult a Health Care Provider before taking this or that medicine. It is important to take into consideration some contra-indications or diseases a patient may have. Only a specialist can prescribe the exact medication and the required dosage.'
                 }
-            ]
+            ],
+            country: '',
+            is_loading: true
+        }
+    },
+    actions: {
+        async init() {
+            if (this.is_loading) {
+                const userStore = useUserStore()
+
+                await Init(userStore.token).then(response => {
+                    userStore.$patch((state) => {
+                        state.isAuth = response.isAuth;
+
+                        if (response.isAuth) {
+                            state.user = response.user;
+                        }
+                    })
+
+                    this.country = response.country
+                })
+
+                this.is_loading = false
+            }
         }
     }
 })

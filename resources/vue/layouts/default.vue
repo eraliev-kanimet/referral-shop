@@ -15,7 +15,3 @@ import MobileMenu from "../components/layouts/mobile-menu.vue";
     <c-footer/>
     <mobile-menu/>
 </template>
-
-<style scoped>
-
-</style>

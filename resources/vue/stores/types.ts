@@ -17,6 +17,8 @@ type FaqItem = {
 export type SiteRootState = {
     testimonials: TestimonialsItem[],
     faq: FaqItem[],
+    country: string,
+    is_loading: boolean
 }
 
 export type ArticlesItem = {
@@ -29,4 +31,17 @@ export type ArticlesItem = {
 
 export type ArticlesRootState = {
     articles: ArticlesItem[]
+}
+
+export type User = {
+    id: number,
+    name: string,
+    email: string,
+    phone: string,
+}
+
+export type UserRootState = {
+    user: User|null,
+    isAuth: boolean,
+    token: string
 }
