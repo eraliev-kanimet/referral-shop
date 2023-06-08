@@ -2,6 +2,8 @@ import {RouteRecordRaw} from "vue-router";
 
 import dashboard from "./dashboard";
 
+import authorize from "../middleware/authorize";
+
 const routes: RouteRecordRaw[] = [
     {
         path: '/',
@@ -70,6 +72,9 @@ const routes: RouteRecordRaw[] = [
             {
                 path: 'login',
                 name: 'login',
+                meta: {
+                    middleware: [authorize]
+                },
                 component: () => import('../../pages/login.vue')
             },
             {
@@ -85,6 +90,9 @@ const routes: RouteRecordRaw[] = [
             {
                 path: 'sign_up',
                 name: 'sign_up',
+                meta: {
+                    middleware: [authorize]
+                },
                 component: () => import('../../pages/sign_up.vue')
             },
             {

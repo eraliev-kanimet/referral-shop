@@ -1,5 +1,8 @@
 import {defineStore} from "pinia";
+
 import {User, UserRootState} from "./types";
+
+import router from "../router";
 
 export const useUserStore = defineStore('user', {
     state: (): UserRootState => ({
@@ -16,6 +19,14 @@ export const useUserStore = defineStore('user', {
             if (rememberMe) {
                 localStorage.setItem('token', token)
             }
+        },
+        async logout() {
+            this.isAuth = false
+            this.token = ''
+
+            localStorage.removeItem('token')
+
+            await router.push({name: 'login'})
         }
     }
 })

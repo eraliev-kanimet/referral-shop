@@ -1,12 +1,12 @@
 import {RouteRecordRaw} from "vue-router";
 
-import auth from "../middleware/auth";
+import unauthorized from "../middleware/unauthorized";
 
 const route: RouteRecordRaw = {
     path: '/dashboard',
     component: () => import('../../layouts/dashboard.vue'),
     meta: {
-        middleware: [auth]
+        middleware: [unauthorized]
     },
     children: [
         {
