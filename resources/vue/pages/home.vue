@@ -103,10 +103,10 @@ const userStore = useUserStore()
             </router-link>
         </div>
         <div class="lovelife my-4 my-md-5 text-center">
-            <a class="d-none d-sm-block mx-auto" href="">
+            <a class="d-none d-sm-block mx-auto">
                 <img class="d-block mx-auto" src="../assets/images/lovelife.png" alt="">
             </a>
-            <a class="d-block d-sm-none mx-auto" href="">
+            <a class="d-block d-sm-none mx-auto">
                 <img class="d-block mx-auto" src="../assets/images/lovelife-vertical.png" alt="">
             </a>
         </div>

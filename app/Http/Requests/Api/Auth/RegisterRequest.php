@@ -20,9 +20,7 @@ class RegisterRequest extends FormRequest
     {
         $validated = parent::validated($key, $default);
 
-        if (is_array($validated)) {
-            $validated['password'] = Hash::make($validated['password']);
-        }
+        $validated['password'] = Hash::make($validated['password']);
 
         return $validated;
     }

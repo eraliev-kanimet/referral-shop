@@ -120,7 +120,7 @@ class ProductsSeeder extends Seeder
                 File::copy(storage_path('fake/images/' . $data['image']), $path);
             }
 
-            return $path;
+            return 'products/' . $data['image'];
         }
 
         $path = $dir . '/default.webp';
@@ -129,7 +129,7 @@ class ProductsSeeder extends Seeder
             File::copy(storage_path('fake/images/default.webp'), $path);
         }
 
-        return $path;
+        return 'products/default.webp';
     }
 
     protected function data()
