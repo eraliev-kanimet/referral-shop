@@ -20,7 +20,8 @@ class ProductResource extends JsonResource
             'name' => $this->resource->name,
             'slug' => $this->resource->slug,
             'images' => array_map(fn (string $image) => asset('storage/' . $image), $this->resource->images),
-            'price' => $this->resource->getMinPrice()
+            'price' => $this->resource->getMinPrice(),
+            'category' => new CategoryResource($this->resource->category)
         ];
     }
 }
