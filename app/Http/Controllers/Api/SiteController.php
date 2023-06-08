@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CategoryResource;
 use App\Http\Resources\UserResource;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Stevebauman\Location\Facades\Location;
 
@@ -20,6 +22,8 @@ class SiteController extends Controller
         $this->setCountryCode();
 
         $this->checkAuthentication();
+
+        $this->setCategories();
 
         return response()->json($this->response);
     }
@@ -42,5 +46,10 @@ class SiteController extends Controller
             $this->response['isAuth'] = true;
             $this->response['user'] = new UserResource(Auth::guard('api')->user());
         }
+    }
+
+    protected function setCategories()
+    {
+        $this->response['categories'] = CategoryResource::collection(Category::all());
     }
 }
