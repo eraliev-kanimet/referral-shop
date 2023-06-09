@@ -3,9 +3,9 @@ import ProductItem from "../../components/products/product-item.vue";
 import ArticlesItem from "../../components/articles/articles-item.vue";
 import DashboardStatistics from "../../components/dashboard/dashboard-statistics.vue";
 
-import {useArticlesStore} from "../../stores/articles";
+import {useArticleStore} from "../../stores/article";
 
-const articlesStore = useArticlesStore()
+const articleStore = useArticleStore()
 </script>
 
 <template>
@@ -53,7 +53,7 @@ const articlesStore = useArticlesStore()
     <div class="mb-4 mb-lg-5">
         <div class="h1">{{ $t('common.you_should_read_this') }}</div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 my-4">
-            <div class="col mb-4" v-for="article in articlesStore.articles">
+            <div class="col mb-4" v-for="article in articleStore.articles">
                 <articles-item :article="article"/>
             </div>
         </div>

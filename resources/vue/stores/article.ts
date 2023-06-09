@@ -1,8 +1,19 @@
 import {defineStore} from "pinia";
-import {ArticlesRootState} from "./types";
 
-export const useArticlesStore = defineStore('articles', {
-    state: (): ArticlesRootState => ({
+export type ArticlesItem = {
+    id: number,
+    route: string,
+    name: string,
+    image: string,
+    date: string,
+}
+
+type ArticleRootState = {
+    articles: ArticlesItem[]
+}
+
+export const useArticleStore = defineStore('article', {
+    state: (): ArticleRootState => ({
         articles: [
             {
                 id: 1,

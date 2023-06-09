@@ -5,7 +5,7 @@
 <template>
     <div class="col">
         <div class="product-single">
-            <a class="product-single-image" href=""><img src="tmp/pills-1.png" alt=""></a>
+            <a class="product-single-image" href=""><img src="" alt=""></a>
             <div class="product-single-info">Erectile Dysfunction</div>
             <div class="product-single-title">Super ED Trial Pack</div>
             <div class="product-single-price">$3.21 <small>per pill</small></div>

@@ -41,7 +41,7 @@
                                         <tr>
                                             <td>
                                                 <a class="product-table" href="">
-                                                    <div class="product-table-image border d-none d-sm-flex"><img src="../assets/tmp/pills-1.png" alt=""></div>
+                                                    <div class="product-table-image border d-none d-sm-flex"><img src="" alt=""></div>
                                                     <div class="product-table-content">Viagra Professional <span class="d-block d-sm-inline">20 Pills x 50mg</span></div>
                                                 </a>
                                             </td>

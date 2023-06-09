@@ -1,7 +1,28 @@
 import {defineStore} from "pinia";
-import {SiteRootState} from "./types";
 import {useUserStore} from "./user";
 import {Init} from "../api/site";
+
+type TestimonialsItem = {
+    id: number,
+    name: string,
+    address: string,
+    avatar?: string,
+    initial: string,
+    content: string
+}
+
+type FaqItem = {
+    id: number,
+    question: string,
+    answer: string,
+}
+
+type SiteRootState = {
+    testimonials: TestimonialsItem[],
+    faq: FaqItem[],
+    country: string,
+    is_loading: boolean
+}
 
 export const useSiteStore = defineStore('site', {
     state: (): SiteRootState => {
