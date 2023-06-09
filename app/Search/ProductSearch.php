@@ -2,43 +2,31 @@
 
 namespace App\Search;
 
-use App\Http\Resources\CategoryResource;
 use App\Http\Resources\ProductResource;
-use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 
 class ProductSearch
 {
-    protected array $response;
     protected int $category_id = 0;
+    protected int $per_page = 12;
 
     public function search(): array
     {
-        $per_page = 12;
-
         $query = $this->buildQuery();
 
         if ($this->category_id) {
             $query->where('category_id', $this->category_id);
         }
 
-        $paginator = $query->paginate($per_page)->withQueryString();
+        $paginator = $query->paginate($this->per_page)->withQueryString();
 
-        $this->response['products'] = $this->buildResponse($paginator, $per_page);
-
-        return $this->response;
+        return $this->buildResponse($paginator);
     }
 
-    public function setCategoryId(?int $category_id): void
+    public function setCategoryId(int $category_id): void
     {
-        if ($category_id) {
-            $this->category_id = $category_id;
-
-            $category = Category::find($category_id);
-
-            $this->response['category'] = new CategoryResource($category);
-        }
+        $this->category_id = $category_id;
     }
 
     protected function buildQuery(): Builder
@@ -50,7 +38,7 @@ class ProductSearch
             }]);
     }
 
-    protected function buildResponse($paginator, $per_page): array
+    protected function buildResponse($paginator): array
     {
         return [
             'data' => ProductResource::collection($paginator->items()),
@@ -59,7 +47,7 @@ class ProductSearch
             'next_page_url' => $paginator->nextPageUrl(),
             'prev_page_url' => $paginator->previousPageUrl(),
             'links' => $paginator->linkCollection(),
-            'per_page' => $per_page,
+            'per_page' => $this->per_page,
             'total' => $paginator->total(),
         ];
     }
