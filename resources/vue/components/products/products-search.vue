@@ -1,11 +1,14 @@
 <script setup lang="ts">
 
+defineProps<{
+    title: string
+}>()
 </script>
 
 <template>
     <div class="row row-cols-1 row-cols-md-2 align-items-center">
         <div class="col">
-            <h1>{{ $t('common.categories') }}</h1>
+            <h1>{{ title }}</h1>
         </div>
         <div class="col">
             <form class="row no-gutters dashboard-product-search" action="">

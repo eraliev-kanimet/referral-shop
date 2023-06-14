@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import ArticlesItem from "../../components/articles/articles-item.vue";
-import {useArticlesStore} from "../../stores/articles";
+import {useArticleStore} from "../../stores/article";
 
-const articlesStore = useArticlesStore()
+const articleStore = useArticleStore()
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const articlesStore = useArticlesStore()
             </div>
             <p v-html="$t('common.articles.text2')"></p>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 my-4">
-                <div class="col mb-4" v-for="article in articlesStore.articles">
+                <div class="col mb-4" v-for="article in articleStore.articles">
                     <articles-item :article="article"/>
                 </div>
             </div>

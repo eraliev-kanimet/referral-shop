@@ -1,19 +1,28 @@
 <script setup lang="ts">
+import {Category} from "../../stores/site";
 
+defineProps<{
+    data: Category[],
+    lang: string
+}>()
 </script>
 
 <template>
     <div class="categories my-3 my-md-4 row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 no-gutters">
-        <a class="categories-item" v-for="i in 10" href="">
+        <router-link
+            v-for="item in data" :to="{name: 'category', params: {slug: item.slug}}"
+            class="categories-item"
+            :key="item.id"
+        >
             <div class="categories-item-content">
-                <div class="categories-item-image"><img src="" alt=""></div>
-                <div class="categories-item-title">Anti Viral</div>
-                <div class="categories-item-amount text-muted">4 products</div>
+                <div class="categories-item-image">
+                    <img :src="item.image" alt="">
+                </div>
+                <div class="categories-item-title">{{ item.name[lang] }}</div>
+                <div class="categories-item-amount text-muted">
+                    {{ item.products }} {{ $t('common.products').toLowerCase() }}
+                </div>
             </div>
-        </a>
+        </router-link>
     </div>
 </template>
-
-<style scoped>
-
-</style>

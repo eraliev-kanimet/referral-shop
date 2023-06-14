@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import {useSiteStore} from "../../stores/site";
+import {useArticleStore} from "../../stores/article";
+
 import Categories from "../../components/products/categories.vue";
 import ArticlesSlider from "../../components/articles/articles-slider.vue";
-import {useArticlesStore} from "../../stores/articles";
 
-const articlesStore = useArticlesStore()
+const siteStore = useSiteStore()
+const articleStore = useArticleStore()
 </script>
 
 <template>
@@ -46,7 +49,7 @@ const articlesStore = useArticlesStore()
             <div class="col-12 col-lg-3">
                 <h2>{{ $t('common.popular_articles') }}</h2>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-1 mb-4">
-                    <div class="col" v-for="article in articlesStore.articles">
+                    <div class="col" v-for="article in articleStore.articles">
                         <div class="post-widget row no-gutters py-4 border-bottom">
                             <div class="col-5 pr-3">
                                 <router-link :to="article.route">
@@ -77,7 +80,7 @@ const articlesStore = useArticlesStore()
         </div>
         <div class="my-4 my-lg-5">
             <h2 class="h1">{{ $t('common.shop_by_categories') }}</h2>
-            <categories/>
+            <categories :data="siteStore.some_categories" :lang="siteStore.lang"/>
         </div>
     </div>
 </template>

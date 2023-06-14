@@ -1,6 +1,6 @@
 import axios from "../plugins/axios";
 
-import {User} from "../stores/types";
+import {User} from "../stores/user";
 
 type OAuthResponse = {
     user: User,

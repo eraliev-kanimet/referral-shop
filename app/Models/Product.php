@@ -50,7 +50,7 @@ class Product extends Model
         }
 
         if (count($min_prices)) {
-            return sprintf('%.2f', min($min_prices));
+            return number_format(min($min_prices), 2);
         }
 
         return 0;

@@ -1,22 +1,35 @@
 <script setup lang="ts">
+import {Product} from "../../api/products";
 
+const {product} = defineProps<{
+    product: Product,
+    lang: string
+}>()
+
+const route = {
+    name: 'product', params: {
+        slug: product.slug
+    }
+}
 </script>
 
 <template>
     <div class="col">
         <div class="product-single">
-            <a class="product-single-image" href=""><img src="tmp/pills-1.png" alt=""></a>
-            <div class="product-single-info">Erectile Dysfunction</div>
-            <div class="product-single-title">Super ED Trial Pack</div>
-            <div class="product-single-price">$3.21 <small>per pill</small></div>
+            <router-link class="product-single-image" :to="route">
+                <img :src="product.images[0]" alt="">
+            </router-link>
+            <div class="product-single-info">{{ product.category.name[lang] }}</div>
+            <div class="product-single-title">{{ product.name[lang] }}</div>
+            <div class="product-single-price">${{ product.price }} <small>per pill</small></div>
             <div class="product-single-buttons">
-                <a class="product-single-add btn btn-primary show-cart" href="">Add to cart</a>
-                <a class="product-single-fav btn btn-secondary" href=""><i class="icon-heart icon-inline"></i></a>
+                <router-link class="product-single-add btn btn-primary show-cart" :to="route">
+                    {{ $t('common.add_to_cart') }}
+                </router-link>
+                <a class="product-single-fav btn btn-secondary" role="button">
+                    <i class="icon-heart icon-inline"></i>
+                </a>
             </div>
         </div>
     </div>
 </template>
-
-<style scoped>
-
-</style>

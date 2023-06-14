@@ -1,8 +1,19 @@
 import {defineStore} from "pinia";
 
-import {User, UserRootState} from "./types";
-
 import router from "../router";
+
+export type User = {
+    id: number,
+    name: string,
+    email: string,
+    phone: string,
+}
+
+type UserRootState = {
+    user: User|null,
+    isAuth: boolean,
+    token: string
+}
 
 export const useUserStore = defineStore('user', {
     state: (): UserRootState => ({

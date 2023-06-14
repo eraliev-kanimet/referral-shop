@@ -31,19 +31,19 @@
                         <div class="product-gallery">
                             <div class="product-gallery-preview border rounded">
                                 <div class="product-gallery-image">
-                                    <div><img src="tmp/pills-1.png" alt=""></div>
+                                    <div><img src="" alt=""></div>
                                 </div>
                             </div>
                             <div class="product-gallery-nav">
                                 <div class="product-gallery-thumbnails">
-                                    <div class="border rounded cursor-pointer" data-toggle="modal" data-target="#zoomModal"><img src="tmp/pills-1.png" alt=""></div>
+                                    <div class="border rounded cursor-pointer" data-toggle="modal" data-target="#zoomModal"><img src="" alt=""></div>
                                 </div>
                             </div>
                             <div class="modal fade" id="zoomModal" tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content position-relative">
                                         <div class="modal-body d-flex align-items-center justify-content-center">
-                                            <img src="tmp/pills-1.png" alt="">
+                                            <img src="" alt="">
                                         </div>
                                         <div class="position-absolute w-100 pt-2 pr-2 d-flex justify-content-end">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
