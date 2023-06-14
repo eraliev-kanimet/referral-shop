@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import {useUserStore} from "../stores/user";
+import {useSiteStore} from "../stores/site";
 
 import Categories from "../components/products/categories.vue";
 import ArticlesSlider from "../components/articles/articles-slider.vue";
 import TestimonialsSlider from "../components/testimonials/testimonials-slider.vue";
 
 const userStore = useUserStore()
+const siteStore = useSiteStore()
 </script>
 
 <template>
@@ -79,7 +81,7 @@ const userStore = useUserStore()
         <div class="container">
             <div class="row row-cols-1 row-cols-lg-2 align-items-center">
                 <div class="col mt-5 mb-0 mb-lg-5">
-                    <div class="pretitle">{{ $t('common.home.welcome_to_site') }}</div>
+                    <div class="pretitle">{{ $t('common.welcome_to_site') }}</div>
                     <h2 class="h1">{{ $t('common.home.text11') }}</h2>
                     <p>{{ $t('common.home.text12') }}</p>
                 </div>
@@ -96,7 +98,7 @@ const userStore = useUserStore()
     </div>
     <div class="container">
         <h2 class="h1">{{ $t('common.shop_by_categories') }}</h2>
-        <categories/>
+        <categories :data="siteStore.some_categories" :lang="siteStore.lang"/>
         <div class="text-center mb-4 mb-md-5">
             <router-link class="btn btn-primary btn-lg" :to="{name: 'products'}">
                 {{ $t('common.view_all_products') }}

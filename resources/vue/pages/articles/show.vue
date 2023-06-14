@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import Categories from "../../components/products/categories.vue";
-import ArticlesSlider from "../../components/articles/articles-slider.vue";
+import {useSiteStore} from "../../stores/site";
 import {useArticleStore} from "../../stores/article";
 
+import Categories from "../../components/products/categories.vue";
+import ArticlesSlider from "../../components/articles/articles-slider.vue";
+
+const siteStore = useSiteStore()
 const articleStore = useArticleStore()
 </script>
 
@@ -77,7 +80,7 @@ const articleStore = useArticleStore()
         </div>
         <div class="my-4 my-lg-5">
             <h2 class="h1">{{ $t('common.shop_by_categories') }}</h2>
-            <categories/>
+            <categories :data="siteStore.some_categories" :lang="siteStore.lang"/>
         </div>
     </div>
 </template>
