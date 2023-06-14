@@ -1,11 +1,16 @@
 import {createRouter, createWebHistory} from "vue-router";
 import {Middleware, MiddlewareContext} from "./types";
+
 import {useSiteStore} from "../stores/site";
+
 import routes from "./routes";
 
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
+    scrollBehavior: () => {
+        return {top: 0, behavior: 'smooth'}
+    }
 });
 
 function middlewarePipeline(context: MiddlewareContext, middleware: Middleware[], index: number): () => void {
