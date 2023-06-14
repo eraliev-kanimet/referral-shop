@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Category\CategoryIndexResource;
 use App\Http\Resources\UserResource;
 use App\Models\Category;
+use App\Models\Page;
 use Illuminate\Support\Facades\Auth;
 use Stevebauman\Location\Facades\Location;
 
@@ -24,6 +25,8 @@ class SiteController extends Controller
         $this->checkAuthentication();
 
         $this->setCategories();
+
+        $this->testimonials();
 
         return response()->json($this->response);
     }
@@ -51,5 +54,22 @@ class SiteController extends Controller
     protected function setCategories()
     {
         $this->response['categories'] = CategoryIndexResource::collection(Category::with('products')->get());
+    }
+
+    protected function testimonials()
+    {
+        $page = Page::where('name', 'testimonials')->first();
+
+        $testimonials = [];
+
+        foreach ($page->content as $content) {
+            if ($content['avatar']) {
+                $content['avatar'] = asset('storage/' . $content['avatar']);
+            }
+
+            $testimonials[] = $content;
+        }
+
+        $this->response['testimonials'] = $testimonials;
     }
 }

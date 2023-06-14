@@ -1,12 +1,13 @@
 import axios from "../plugins/axios";
+
 import {User} from "../stores/user";
-import {Category} from "../stores/site";
 
 type SiteResponse = {
     isAuth: boolean;
     country: string;
     user: User,
-    categories: Category[]
+    categories: [],
+    testimonials: []
 }
 
 export const Init = async (token: string): Promise<SiteResponse> => {
