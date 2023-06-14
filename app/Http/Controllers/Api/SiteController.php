@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CategoryResource;
+use App\Http\Resources\Category\CategoryIndexResource;
 use App\Http\Resources\UserResource;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
@@ -50,6 +50,6 @@ class SiteController extends Controller
 
     protected function setCategories()
     {
-        $this->response['categories'] = CategoryResource::collection(Category::all());
+        $this->response['categories'] = CategoryIndexResource::collection(Category::with('products')->get());
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ProductShowResource;
+use App\Http\Resources\Product\ProductShowResource;
 use App\Models\Product;
 use App\Search\ProductSearch;
 

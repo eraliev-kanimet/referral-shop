@@ -294,4 +294,7 @@ return [
         'text3_2' => 'Always ready to assist',
     ],
     'unauthorised' => 'Unauthorised',
+    'add_to_cart' => 'Add to cart',
+    'prev' => 'Prev',
+    'next' => 'Next',
 ];

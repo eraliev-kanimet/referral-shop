@@ -2,9 +2,10 @@
 
 namespace App\Search;
 
-use App\Http\Resources\ProductResource;
+use App\Http\Resources\Product\ProductResource;
 use App\Models\Product;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ProductSearch
 {
@@ -38,7 +39,7 @@ class ProductSearch
             }]);
     }
 
-    protected function buildResponse($paginator): array
+    protected function buildResponse(LengthAwarePaginator $paginator): array
     {
         return [
             'data' => ProductResource::collection($paginator->items()),
