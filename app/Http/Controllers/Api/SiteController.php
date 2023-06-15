@@ -7,17 +7,22 @@ use App\Http\Resources\Category\CategoryIndexResource;
 use App\Http\Resources\UserResource;
 use App\Models\Category;
 use App\Models\Page;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use Stevebauman\Location\Facades\Location;
 
 class SiteController extends Controller
 {
+    protected Collection $pages;
+
     protected array $response = [
         'isAuth' => false,
     ];
 
     public function index()
     {
+        $this->pages = Page::all();
+
         $this->setClientInfo();
 
         $this->setCountryCode();
@@ -26,7 +31,9 @@ class SiteController extends Controller
 
         $this->setCategories();
 
-        $this->testimonials();
+        $this->setTestimonials();
+
+        $this->setFaq();
 
         return response()->json($this->response);
     }
@@ -56,9 +63,9 @@ class SiteController extends Controller
         $this->response['categories'] = CategoryIndexResource::collection(Category::with('products')->get());
     }
 
-    protected function testimonials()
+    protected function setTestimonials()
     {
-        $page = Page::where('name', 'testimonials')->first();
+        $page = $this->pages->where('name', 'testimonials')->first();
 
         $testimonials = [];
 
@@ -71,5 +78,12 @@ class SiteController extends Controller
         }
 
         $this->response['testimonials'] = $testimonials;
+    }
+
+    protected function setFaq()
+    {
+        $page = $this->pages->where('name', 'faq')->first();
+
+        $this->response['faq'] = $page->content;
     }
 }

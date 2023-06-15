@@ -7,7 +7,8 @@ type SiteResponse = {
     country: string;
     user: User,
     categories: [],
-    testimonials: []
+    testimonials: [],
+    faq: [],
 }
 
 export const Init = async (token: string): Promise<SiteResponse> => {

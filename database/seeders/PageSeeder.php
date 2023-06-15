@@ -19,6 +19,7 @@ class PageSeeder extends Seeder
         }
 
         $this->testimonials();
+        $this->faq();
     }
 
     protected function testimonials(): void
@@ -59,6 +60,35 @@ class PageSeeder extends Seeder
             'seo' => [
                 'title' => ttt('Testimonials'),
                 'desc' => ttt('Testimonials description'),
+            ]
+        ]);
+    }
+
+    protected function faq(): void
+    {
+        $faq = [
+            1 => 'What is the difference between Viagra, Cialis, Levitra, Soft and Regular?',
+            2 => 'Do you require a prescription?',
+            3 => 'What are you shipping methods?',
+            4 => 'What medication do you offer?',
+            5 => 'How can one place an order?',
+            6 => 'What are your available payment methods?',
+        ];
+
+        Page::firstOrCreate([
+            'name' => 'faq'
+        ], [
+            'name' => 'faq',
+            'content' => array_map(function ($key, $value) {
+                return [
+                    'id' => $key,
+                    'question' => $value,
+                    'answer' => fake()->paragraph,
+                ];
+            }, array_keys($faq), array_values($faq)),
+            'seo' => [
+                'title' => ttt('FAQ'),
+                'desc' => ttt('FAQ description'),
             ]
         ]);
     }
