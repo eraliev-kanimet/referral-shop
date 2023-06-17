@@ -9,16 +9,20 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
-class ProductsSeeder extends Seeder
+class ProductSeeder extends Seeder
 {
     public function run(): void
     {
-        foreach ($this->data() as $data) {
-            $category = $this->category($data);
+        if (!Product::count()) {
+            foreach ($this->data() as $data) {
+                $category = $this->category($data);
 
-            $product = $this->product($category, $data);
+                $product = $this->product($category, $data);
 
-            $this->packs($product, $data);
+                $this->packs($product, $data);
+            }
+        } else {
+            print "  Products exist\n";
         }
     }
 
@@ -30,12 +34,12 @@ class ProductsSeeder extends Seeder
         return Category::firstOrCreate([
             'slug' => $slug
         ], [
-            'name' => $this->t($name),
+            'name' => ttt($name),
             'image' => $this->image($data),
             'slug' => $slug,
             'seo' => [
-                'title' => $this->t($name),
-                'desc' => $this->t($name)
+                'title' => ttt($name),
+                'desc' => ttt($name)
             ]
         ]);
     }
@@ -45,25 +49,25 @@ class ProductsSeeder extends Seeder
         $name = $data['name']['en'];
 
         $product = [
-            'name' => $this->t($name),
+            'name' => ttt($name),
             'slug' => Str::slug($name),
             'category_id' => $category->id,
             'seo' => [
-                'title' => $this->t($name),
-                'desc' => $this->t($name),
+                'title' => ttt($name),
+                'desc' => ttt($name),
             ]
         ];
 
         $product['images'] = [$this->image($data)];
 
         if (isset($data['short_description'])) {
-            $product['short_desc'] = $this->t($data['short_description']['en']);
+            $product['short_desc'] = ttt($data['short_description']['en']);
 
-            $product['seo']['desc'] = $this->t(strip_tags($data['short_description']['en']));
+            $product['seo']['desc'] = ttt(strip_tags($data['short_description']['en']));
         }
 
         if (isset($data['description'])) {
-            $product['desc'] = $this->t($data['description']['en']);
+            $product['desc'] = ttt($data['description']['en']);
         }
 
         if (isset($data['active_ingredient'])) {
@@ -135,16 +139,5 @@ class ProductsSeeder extends Seeder
     protected function data()
     {
         return json_decode(file_get_contents(storage_path('fake/fake.json')), true);
-    }
-
-    protected function t($value): array
-    {
-        return [
-            'en' => $value,
-            'de' => $value,
-            'es' => $value,
-            'fr' => $value,
-            'it' => $value,
-        ];
     }
 }

@@ -21,7 +21,7 @@ const siteStore = useSiteStore()
                     </div>
                     <button class="px-1 btn btn-sm"><i class="icon-plus icon-inline"></i></button>
                 </div>
-                <div class="collapse" id="faq01">
+                <div class="collapse" :id="'faq0' + item.id">
                     <div class="faq-answer pr-3 pb-3 pl-3">
                         <span class="text-muted">A:</span>
                         {{ item.answer }}

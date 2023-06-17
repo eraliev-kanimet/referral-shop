@@ -2,9 +2,9 @@
 import VueTinySlider from '@mentorkadriu/vue-tiny-slider'
 import ArticlesItem from "./articles-item.vue";
 
-import {useArticleStore} from "../../stores/article.ts";
+import {useSiteStore} from "../../stores/site.ts";
 
-const articleStore = useArticleStore()
+const siteStore = useSiteStore()
 
 const options = {
     items: 1,
@@ -41,8 +41,8 @@ defineProps({
         </div>
     </div>
     <vue-tiny-slider class="blog-slider my-1 my-md-4" :options="options">
-        <div v-for="article in articleStore.articles" :key="article.id">
-            <articles-item :article="article"/>
+        <div v-for="article in siteStore.articles" :key="article.id">
+            <articles-item :article="article" :lang="siteStore.lang"/>
         </div>
     </vue-tiny-slider>
 </template>

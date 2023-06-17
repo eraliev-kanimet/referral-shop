@@ -3,20 +3,28 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Article\ArticleResource;
 use App\Http\Resources\Category\CategoryIndexResource;
 use App\Http\Resources\UserResource;
+use App\Models\Article;
 use App\Models\Category;
+use App\Models\Page;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use Stevebauman\Location\Facades\Location;
 
 class SiteController extends Controller
 {
+    protected Collection $pages;
+
     protected array $response = [
         'isAuth' => false,
     ];
 
     public function index()
     {
+        $this->pages = Page::all();
+
         $this->setClientInfo();
 
         $this->setCountryCode();
@@ -24,6 +32,12 @@ class SiteController extends Controller
         $this->checkAuthentication();
 
         $this->setCategories();
+
+        $this->setTestimonials();
+
+        $this->setFaq();
+
+        $this->setArticles();
 
         return response()->json($this->response);
     }
@@ -51,5 +65,36 @@ class SiteController extends Controller
     protected function setCategories()
     {
         $this->response['categories'] = CategoryIndexResource::collection(Category::with('products')->get());
+    }
+
+    protected function setTestimonials()
+    {
+        $page = $this->pages->where('name', 'testimonials')->first();
+
+        $testimonials = [];
+
+        foreach ($page->content as $content) {
+            if ($content['avatar']) {
+                $content['avatar'] = asset('storage/' . $content['avatar']);
+            }
+
+            $testimonials[] = $content;
+        }
+
+        $this->response['testimonials'] = $testimonials;
+    }
+
+    protected function setFaq()
+    {
+        $page = $this->pages->where('name', 'faq')->first();
+
+        $this->response['faq'] = $page->content;
+    }
+
+    protected function setArticles()
+    {
+        $this->response['articles'] = ArticleResource::collection(
+            Article::limit(5)->where('posted', true)->get()
+        );
     }
 }

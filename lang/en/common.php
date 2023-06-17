@@ -297,4 +297,5 @@ return [
     'add_to_cart' => 'Add to cart',
     'prev' => 'Prev',
     'next' => 'Next',
+    'tags' => 'Tags',
 ];

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import {Category, useSiteStore} from "../../stores/site";
+import {useSiteStore} from "../../stores/site";
+import {Category} from "../../stores/types";
 
 import ProductItem from "../../components/products/product-item.vue";
 import Categories from "../../components/products/categories.vue";

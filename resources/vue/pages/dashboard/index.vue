@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import ProductItem from "../../components/products/product-item.vue";
 import ArticlesItem from "../../components/articles/articles-item.vue";
 import DashboardStatistics from "../../components/dashboard/dashboard-statistics.vue";
 
-import {useArticleStore} from "../../stores/article";
+import {useSiteStore} from "../../stores/site";
 
-const articleStore = useArticleStore()
+const siteStore = useSiteStore()
 </script>
 
 <template>
@@ -41,10 +40,10 @@ const articleStore = useArticleStore()
         <div class="h1">{{ $t('common.referral_statistics') }}</div>
         <dashboard-statistics/>
     </div>
-    <div class="mb-4 mb-lg-5">
+    <div class="mb-4 mb-lg-5" v-if="false">
         <div class="h1">{{ $t('common.today_top_offers') }}</div>
-        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 no-gutters my-4">
-            <product-item v-for="i in 10"/>
+        <div  class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 no-gutters my-4">
+<!--            <product-item v-for="i in 10"/>-->
         </div>
         <router-link class="btn btn-primary" :to="{name: 'products'}">
             {{ $t('common.see_all_products') }}
@@ -53,8 +52,8 @@ const articleStore = useArticleStore()
     <div class="mb-4 mb-lg-5">
         <div class="h1">{{ $t('common.you_should_read_this') }}</div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 my-4">
-            <div class="col mb-4" v-for="article in articleStore.articles">
-                <articles-item :article="article"/>
+            <div class="col mb-4" v-for="article in siteStore.articles">
+                <articles-item :article="article" :lang="siteStore.lang"/>
             </div>
         </div>
     </div>
