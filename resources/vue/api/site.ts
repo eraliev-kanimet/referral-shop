@@ -8,6 +8,7 @@ type SiteResponse = {
     user: User,
     categories: [],
     testimonials: [],
+    articles: [],
     faq: [],
 }
 

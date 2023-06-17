@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {Category} from "../../stores/site";
+import {Category} from "../../stores/types";
 
 defineProps<{
     data: Category[],

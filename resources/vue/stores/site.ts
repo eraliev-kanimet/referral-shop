@@ -4,37 +4,11 @@ import {useUserStore} from "./user";
 
 import {Init} from "../api/site";
 
-type TestimonialsItem = {
-    id: number,
-    name: string,
-    address: string,
-    avatar?: string|null,
-    initial: string,
-    content: string
-}
-
-type FaqItem = {
-    id: number,
-    question: string,
-    answer: string,
-}
-
-export type Category = {
-    id: number,
-    name: {
-        en: string,
-        de: string,
-        fr: string,
-        es: string,
-        it: string,
-    },
-    slug: string,
-    image: string,
-    products: number
-}
+import {Article, Category, FaqItem, TestimonialsItem} from "./types"
 
 type SiteRootState = {
     testimonials: TestimonialsItem[],
+    articles: Article[],
     faq: FaqItem[],
     categories: Category[],
     country: string,
@@ -45,6 +19,7 @@ type SiteRootState = {
 export const useSiteStore = defineStore('site', {
     state: (): SiteRootState => ({
         testimonials: [],
+        articles: [],
         faq: [],
         country: '',
         lang: 'en',
@@ -68,6 +43,7 @@ export const useSiteStore = defineStore('site', {
                     this.country = response.country
                     this.categories = response.categories
                     this.testimonials = response.testimonials
+                    this.articles = response.articles
                     this.faq = response.faq
                 })
 

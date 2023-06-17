@@ -4,7 +4,7 @@ import {useRoute, useRouter} from "vue-router";
 
 import ProductsPage from "../../components/products/products-page.vue";
 
-import {Category} from "../../stores/site";
+import {Category} from "../../stores/types";
 
 import {ApiCategory, Product} from "../../api/products";
 
@@ -28,7 +28,7 @@ const data = reactive<{
 })
 
 const setProducts = async (page: number) => {
-    await ApiCategory(data.slug, data.page).then(response => {
+    await ApiCategory(data.slug, page).then(response => {
         data.category = response.category
         data.products = response.products.data
         data.total = response.products.last_page

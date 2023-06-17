@@ -1,13 +1,5 @@
 import axios from "../plugins/axios";
-import {Category} from "../stores/site";
-
-type Translate = {
-    en: string,
-    de: string,
-    fr: string,
-    es: string,
-    it: string,
-}
+import {Category, Translate} from "../stores/types";
 
 interface CategoryShow extends Category {
     desc: Translate,
