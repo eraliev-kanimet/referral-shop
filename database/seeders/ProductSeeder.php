@@ -9,7 +9,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
-class ProductsSeeder extends Seeder
+class ProductSeeder extends Seeder
 {
     public function run(): void
     {

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Article\ArticleResource;
 use App\Http\Resources\Category\CategoryIndexResource;
 use App\Http\Resources\UserResource;
+use App\Models\Article;
 use App\Models\Category;
 use App\Models\Page;
 use Illuminate\Database\Eloquent\Collection;
@@ -34,6 +36,8 @@ class SiteController extends Controller
         $this->setTestimonials();
 
         $this->setFaq();
+
+        $this->setArticles();
 
         return response()->json($this->response);
     }
@@ -85,5 +89,12 @@ class SiteController extends Controller
         $page = $this->pages->where('name', 'faq')->first();
 
         $this->response['faq'] = $page->content;
+    }
+
+    protected function setArticles()
+    {
+        $this->response['articles'] = ArticleResource::collection(
+            Article::limit(5)->where('posted', true)->get()
+        );
     }
 }
