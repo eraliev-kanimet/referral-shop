@@ -4,9 +4,9 @@ import {useRoute, useRouter} from "vue-router";
 
 import ProductsPage from "../../components/products/products-page.vue";
 
-import {Category} from "../../stores/types";
+import {Category, Product} from "../../stores/types";
 
-import {ApiCategory, Product} from "../../api/products";
+import {ApiCategory} from "../../api/products";
 
 const route = useRoute()
 const router = useRouter()
@@ -34,6 +34,8 @@ const setProducts = async (page: number) => {
         data.total = response.products.last_page
         data.loading = false
         data.page = page
+    }).catch(() => {
+        router.push({name: 'error'})
     })
 }
 
@@ -56,10 +58,12 @@ const setPage = async (page) => {
 }
 
 watch(() => route.params.slug, async () => {
-    data.page = 1
-    data.slug = route.params.slug as string
+    if (route.name == 'category') {
+        data.page = 1
+        data.slug = route.params.slug as string
 
-    await setProducts(data.page)
+        await setProducts(data.page)
+    }
 })
 
 onMounted(async () => {

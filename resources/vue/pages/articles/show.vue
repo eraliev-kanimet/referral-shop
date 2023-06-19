@@ -33,7 +33,9 @@ const setArticle = async () => {
 }
 
 watch(() => route.params.slug, async () => {
-    await setArticle()
+    if (route.name == 'article') {
+        await setArticle()
+    }
 })
 
 onMounted(async () => {

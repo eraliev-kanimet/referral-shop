@@ -1,5 +1,6 @@
 import axios from "../plugins/axios";
-import {Category, Translate} from "../stores/types";
+
+import {Category, Product, ProductShow, Translate} from "../stores/types";
 
 interface CategoryShow extends Category {
     desc: Translate,
@@ -7,15 +8,6 @@ interface CategoryShow extends Category {
         title: Translate,
         desc: Translate,
     }
-}
-
-export type Product = {
-    id: number,
-    name: Translate,
-    slug: string,
-    images: string[],
-    price: number,
-    category: Category
 }
 
 type ApiProductsResponse = {
@@ -36,26 +28,6 @@ type ApiProductsResponse = {
 type ApiCategoryResponse = {
     category: CategoryShow,
     products: ApiProductsResponse
-}
-
-interface ProductShow extends Product {
-    short_desc: Translate,
-    desc: Translate,
-    seo: {
-        title: Translate,
-        desc: Translate,
-    },
-    active_ingredients: string[],
-    extra_other_names: string[],
-    packs: {
-        id: number,
-        type: string,
-        dose: number,
-        price: number,
-        quantity: number,
-        measure: string,
-        bestseller: boolean,
-    }[]
 }
 
 type ApiProductResponse = {

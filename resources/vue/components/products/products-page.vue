@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import {useSiteStore} from "../../stores/site";
-import {Category} from "../../stores/types";
+import {Category, Product} from "../../stores/types";
 
 import ProductItem from "../../components/products/product-item.vue";
 import Categories from "../../components/products/categories.vue";
 import ProductsSearch from "../../components/products/products-search.vue";
 import Paginator from "../paginator.vue";
-
-import {Product} from "../../api/products";
 
 const siteStore = useSiteStore()
 
