@@ -50,6 +50,7 @@ export interface ProductShow extends Product {
     extra_other_names: string[],
     packs: {
         dose: number,
+        measure: string,
         items: {
             id: number,
             type: string,
@@ -58,6 +59,7 @@ export interface ProductShow extends Product {
             quantity: number,
             measure: string,
             bestseller: boolean,
+            save: number|string
         }[]
     }[]
 }

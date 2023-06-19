@@ -18,6 +18,10 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        return new ProductShowResource($product);
+        if ($product->is_available) {
+            return new ProductShowResource($product);
+        }
+
+        return response()->json([], 404);
     }
 }

@@ -25,12 +25,21 @@ class ProductShowResource extends ProductResource
 
         foreach ($this->resource->packs->groupBy('dose') as $group) {
             $dose = 0;
+            $measure = 'mg';
             $items = [];
+            $mostExpensivePack = 0;
+
+            $packagePrices = $group->map(fn (Pack $pack) => $pack->price / $pack->quantity);
+
+            if ($packagePrices->count()) {
+                $mostExpensivePack = max($packagePrices->toArray());
+            }
 
             foreach ($group as $pack) {
                 /** @var Pack $pack */
 
                 $dose = $pack->dose;
+                $measure = $pack->measure;
 
                 $items[] = [
                     'id' => $pack->id,
@@ -40,15 +49,26 @@ class ProductShowResource extends ProductResource
                     'price' => $pack->price,
                     'measure' => $pack->measure,
                     'bestseller' => $pack->bestseller,
+                    'save' => $this->save($pack, $mostExpensivePack)
                 ];
             }
 
             $packs[] = [
                 'dose' => $dose,
+                'measure' => $measure,
                 'items' => $items
             ];
         }
 
         return $packs;
+    }
+
+    protected function save(Pack $pack, $mostExpensivePack): int|string
+    {
+        $sum = $mostExpensivePack - $pack->price / $pack->quantity;
+
+        return abs($pack->quantity * $sum) !== 0
+            ? number_format(abs($pack->quantity * $sum), 2, '.', '')
+            : 0;
     }
 }
