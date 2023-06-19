@@ -4,7 +4,8 @@ import {useRoute, useRouter} from "vue-router";
 
 import ProductsPage from "../../components/products/products-page.vue";
 
-import {ApiProducts, Product} from "../../api/products";
+import {ApiProducts} from "../../api/products";
+import {Product} from "../../stores/types";
 
 const route = useRoute()
 const router = useRouter()

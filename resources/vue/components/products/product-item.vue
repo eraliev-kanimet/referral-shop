@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {Product} from "../../api/products";
+import {Product} from "../../stores/types";
 
 const {product} = defineProps<{
     product: Product,
