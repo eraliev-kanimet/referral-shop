@@ -40,10 +40,8 @@ export const ApiCategory = async (slug: string, page: number): Promise<ApiCatego
     }
 }).then(response => response.data)
 
-export const ApiProducts = async (page: number): Promise<ApiProductsResponse> => await axios.get('products', {
-    params: {
-        page: page
-    }
+export const ApiProducts = async (params: object): Promise<ApiProductsResponse> => await axios.get('products', {
+    params: params
 }).then(response => response.data)
 
 export const ApiProduct = async (slug: string): Promise<ApiProductResponse> => await axios.get('products/' + slug)

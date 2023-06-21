@@ -106,12 +106,16 @@ onMounted(async () => {
                     <div class="col-12 col-md-8">
                         <h1>{{ product.name[siteStore.lang] }}</h1>
                         <div class="my-3">
-                            <div class="product-prop my-2">
+                            <div class="product-prop my-2" v-if="product.active_ingredients.length">
                                 <span class="product-prop-label text-muted">
                                     {{ $t('common.product_page.text1') }}:
                                 </span>
-                                <a role="button" class="ml-1"
-                                   v-for="ingredient in product.active_ingredients">{{ ingredient }}</a>
+                                <router-link
+                                    :to="{name: 'products', query: {q: ingredient}}"
+                                    role="button"
+                                    class="ml-1"
+                                    v-for="ingredient in product.active_ingredients"
+                                >{{ ingredient }}</router-link>
                             </div>
                             <div class="product-prop my-2">
                                 <span class="product-prop-label text-muted">
@@ -122,17 +126,18 @@ onMounted(async () => {
                                     ({{ product.packs.length }} {{ $t('common.product_page.text4') }})
                                 </span>
                             </div>
-                            <div class="product-prop my-2">
+                            <div class="product-prop my-2" v-if="product.extra_other_names.length">
                                 <span class="product-prop-label text-muted">
                                     {{ $t('common.product_page.text5') }}:
                                 </span>
                                 <div class="product-tags">
                                     <div class="product-tags-content collapse" id="productTags">
-                                        <a
+                                        <router-link
+                                            :to="{name: 'products', query: {q: extra_other_name}}"
                                             role="button"
                                             class="mr-1"
                                             v-for="extra_other_name in product.extra_other_names"
-                                        >{{ extra_other_name }}</a>
+                                        >{{ extra_other_name }}</router-link>
                                     </div>
                                     <button
                                         class="btn btn-primary product-tags-btn collapsed"
@@ -229,7 +234,7 @@ onMounted(async () => {
                                     <tr v-for="pack in group.items">
                                         <td class="font-weight-bold text-lowercase">
                                             {{ pack.dose + pack.measure }} x
-                                            {{ pack.quantity + ' ' + $t('common.pills') }}
+                                            {{ pack.quantity + ' ' + $t('common.pack_types.' + pack.type) }}
                                         </td>
                                         <td>${{ (pack.price / pack.quantity).toFixed(2) }}</td>
                                         <td>

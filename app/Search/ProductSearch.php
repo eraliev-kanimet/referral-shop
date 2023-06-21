@@ -10,7 +10,13 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class ProductSearch
 {
     protected int $category_id = 0;
-    protected int $per_page = 12;
+
+    public function __construct(
+        protected ?string $query_string = '',
+        protected int     $per_page = 12,
+    )
+    {
+    }
 
     public function search(): array
     {
@@ -18,6 +24,22 @@ class ProductSearch
 
         if ($this->category_id) {
             $query->where('category_id', $this->category_id);
+        }
+
+        if ($this->query_string) {
+            $words = explode(' ', $this->query_string);
+
+            $query->where(function (Builder $query) use ($words) {
+                foreach ($words as $word) {
+                    $query->orWhere('name', 'like', "%$word%")
+                        ->orWhere('active_ingredients', 'like', "%$word%")
+                        ->orWhere('extra_other_names', 'like', "%$word%")
+                        ->orWhereHas(
+                            'category',
+                            fn(Builder $query) => $query->where('name', 'like', "%$word%")
+                        );
+                }
+            });
         }
 
         $paginator = $query->paginate($this->per_page)->withQueryString();
@@ -33,10 +55,21 @@ class ProductSearch
     protected function buildQuery(): Builder
     {
         return Product::query()
+            ->select([
+                'id',
+                'name',
+                'slug',
+                'images',
+                'price',
+                'category_id',
+                'active_ingredients',
+                'extra_other_names',
+            ])
             ->whereIsAvailable(true)
-            ->with(['category', 'packs' => function (Builder $query) {
-                $query->where('is_available', true);
-            }]);
+            ->with([
+                'category',
+                'packs' => fn(Builder $query) => $query->where('is_available', true)
+            ]);
     }
 
     protected function buildResponse(LengthAwarePaginator $paginator): array

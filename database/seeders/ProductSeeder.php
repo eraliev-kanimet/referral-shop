@@ -71,7 +71,7 @@ class ProductSeeder extends Seeder
         }
 
         if (isset($data['active_ingredient'])) {
-            $product['active_ingredients'] = array_map(fn ($value) => trim($value), explode(',', $data['active_ingredient']['en']));
+            $product['active_ingredients'] = $this->product_tags($data['active_ingredient']['en']);
         }
 
         if (isset($data['is_available'])) {
@@ -79,7 +79,7 @@ class ProductSeeder extends Seeder
         }
 
         if (isset($data['extra_other_names'])) {
-            $product['extra_other_names'] = array_map(fn ($value) => trim($value), explode(',', $data['extra_other_names']['en']));
+            $product['extra_other_names'] = $this->product_tags($data['extra_other_names']['en']);
         }
 
         $product = Product::firstOrCreate([
@@ -139,5 +139,10 @@ class ProductSeeder extends Seeder
     protected function data()
     {
         return json_decode(file_get_contents(storage_path('fake/fake.json')), true);
+    }
+
+    protected function product_tags(string $data): array
+    {
+        return array_filter(array_map(fn ($v) => trim($v), explode(',', $data)), fn($v) => $v != '');
     }
 }

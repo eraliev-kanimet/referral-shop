@@ -304,4 +304,13 @@ return [
     'pills' => 'pills',
     'total_price' => 'Total Price',
     'action' => 'Action',
+    'pack_types' => [
+        'pills' => 'Pills',
+        'bottles' => 'Bottles',
+        'caps' => 'Caps',
+        'creams' => 'Creams',
+        'flacons' => 'Flacons',
+        'inhalers' => 'Inhalers',
+        'packs' => 'Packs',
+    ]
 ];
