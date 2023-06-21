@@ -43,7 +43,7 @@ class ProductShowResource extends ProductResource
 
                 $items[] = [
                     'id' => $pack->id,
-                    'type' => $pack->type,
+                    'type' => strtolower($pack->type),
                     'dose' => $pack->dose,
                     'quantity' => $pack->quantity,
                     'price' => $pack->price,

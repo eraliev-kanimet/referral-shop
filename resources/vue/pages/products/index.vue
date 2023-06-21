@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {onMounted, reactive} from "vue";
+import {onMounted, reactive, watch} from "vue";
 import {useRoute, useRouter} from "vue-router";
 
 import ProductsPage from "../../components/products/products-page.vue";
@@ -14,22 +14,36 @@ const data = reactive<{
     products: Product[],
     total: number,
     page: number,
+    query: string,
     loading: boolean
 }>({
     products: [],
     total: 0,
     page: route.query.page ? Number(route.query.page) : 1,
+    query: route.query.q as string ?? '',
     loading: true
 })
 
 const setProducts = async (page: number) => {
-    await ApiProducts(page).then(response => {
+    await ApiProducts({
+        page: page,
+        q: data.query
+    }).then(response => {
         data.products = response.data
         data.total = response.last_page
         data.loading = false
         data.page = page
     })
 }
+
+watch(() => route.query.q, async () => {
+    if (route.name == 'products') {
+        data.query = route.query.q as string
+        data.page = 1
+
+        await setProducts(data.page)
+    }
+})
 
 onMounted(async () => {
     await setProducts(data.page)
@@ -42,7 +56,8 @@ const setPage = async (page) => {
         router.push({
             name: 'products',
             query: {
-                page: page
+                page: page,
+                q: data.query
             }
         }).then(async () => {
             await setProducts(page)
@@ -52,5 +67,11 @@ const setPage = async (page) => {
 </script>
 
 <template>
-    <products-page @set-page="setPage" :page="data.page" :total="data.total" :category="null" :products="data.products"/>
+    <products-page
+        @set-page="setPage"
+        :page="data.page"
+        :total="data.total"
+        :category="null"
+        :products="data.products"
+    />
 </template>
