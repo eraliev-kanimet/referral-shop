@@ -11,6 +11,10 @@ import showPassword from "../../helpers/show-password";
 import {OAuthRegister} from "../../api/user";
 import {useUserStore} from "../../stores/user";
 
+interface Errors {
+    [key: string]: any;
+}
+
 const {t} = useI18n()
 const router = useRouter()
 
@@ -23,7 +27,7 @@ const data = reactive({
     is_loading: false
 })
 
-const errors = reactive({
+const errors = reactive<Errors>({
     email: '',
     phone: '',
     password: '',

@@ -312,5 +312,7 @@ return [
         'flacons' => 'Flacons',
         'inhalers' => 'Inhalers',
         'packs' => 'Packs',
-    ]
+    ],
+    'result_products' => "Products by request :query ",
+    'no_products' => "No products were found for :query "
 ];

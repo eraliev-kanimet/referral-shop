@@ -13,7 +13,7 @@ type SiteRootState = {
     categories: Category[],
     country: string,
     is_loading: boolean,
-    lang: string
+    lang: 'en' | 'de' | 'fr' | 'es' | 'it'
 }
 
 export const useSiteStore = defineStore('site', {

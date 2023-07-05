@@ -3,17 +3,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Article\ArticleResource;
 use App\Http\Resources\Article\ArticleShowResource;
 use App\Models\Article;
-use App\Search\ArticleSearch;
 
 class ArticleController extends Controller
 {
     public function index()
     {
-        $articleSearch = new ArticleSearch();
+        $paginator = Article::wherePosted(true)->paginate(8)->withQueryString();
+        $articles = ArticleResource::collection($paginator->items());
 
-        return response()->json($articleSearch->search());
+        return response()->json(paginator_format($paginator, $articles));
     }
 
     public function show(Article $article)
