@@ -10,10 +10,7 @@ import {helpers, required, email} from "@vuelidate/validators";
 import showPassword from "../../helpers/show-password";
 import {OAuthLogin} from "../../api/user";
 import {useUserStore} from "../../stores/user";
-
-interface Errors {
-    [key: string]: any;
-}
+import {Errors} from "../../types";
 
 const {t} = useI18n()
 const router = useRouter()

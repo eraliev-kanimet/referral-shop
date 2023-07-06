@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+import ContactUsForm from "../components/site/contact-us-form.vue";
 </script>
 
 <template>
@@ -35,41 +36,7 @@
                             <a href=""><i class="icon-yt"></i></a>
                         </div>
                     </div>
-                    <div class="contacts-form">
-                        <div class="form-group">
-                            <label for="name">{{ $t('common.name') }}:</label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label>{{ $t('common.category') }}:</label>
-                            <select class="custom-select">
-                                <option selected>{{ $t('common.select') }}...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="question">{{ $t('common.question') }}:</label>
-                            <textarea class="form-control" id="question" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="agree">
-                                <label class="custom-control-label" for="agree">
-                                    {{ $t('common.agree_text.text1') }}
-                                    <a class="font-weight-bold" href="">{{ $t('common.agree_text.text2') }}</a>
-                                    {{ $t('common.agree_text.text3') }}
-                                    <a class="font-weight-bold" href="">{{ $t('common.agree_text.text4') }}</a>
-                                </label>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary px-5">{{ $t('common.send') }}</button>
-                    </div>
+                    <contact-us-form/>
                 </div>
             </div>
         </div>
