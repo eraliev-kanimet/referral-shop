@@ -22,7 +22,11 @@ const userStore = useUserStore()
                     </div>
                     <div class="header-top-phone-item d-none d-md-flex">
                         <i class="icon-phone"></i>
-                        <a href="">{{ $t('common.request_callback') }}</a>
+                        <a
+                            href=""
+                            data-toggle="modal"
+                            data-target="#callbackModal"
+                        >{{ $t('common.request_callback') }}</a>
                     </div>
                 </div>
                 <div class="header-top-lang dropdown d-none d-lg-block">
