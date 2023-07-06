@@ -314,5 +314,6 @@ return [
         'packs' => 'Packs',
     ],
     'result_products' => "Products by request :query ",
-    'no_products' => "No products were found for :query "
+    'no_products' => "No products were found for :query ",
+    'request_sent_successfully' => 'Request sent successfully!'
 ];

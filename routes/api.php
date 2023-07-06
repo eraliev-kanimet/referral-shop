@@ -17,6 +17,6 @@ Route::resource('categories', CategoryController::class)->only(['show']);
 Route::resource('products', ProductController::class)->only(['index', 'show']);
 Route::resource('articles', ArticleController::class)->only(['index', 'show']);
 
-Route::get('form/subscribe', [SiteFormController::class, 'subscribe'])->name('subscribe');
-Route::get('form/contact_us', [SiteFormController::class, 'contact_us'])->name('contact_us');
-Route::get('form/callback', [SiteFormController::class, 'callback'])->name('callback');
+Route::post('form/subscribe', [SiteFormController::class, 'subscribe'])->name('subscribe');
+Route::post('form/contact_us', [SiteFormController::class, 'contact_us'])->name('contact_us');
+Route::post('form/callback', [SiteFormController::class, 'callback'])->name('callback');
