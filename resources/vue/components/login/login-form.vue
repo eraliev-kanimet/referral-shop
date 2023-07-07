@@ -10,6 +10,7 @@ import {helpers, required, email} from "@vuelidate/validators";
 import showPassword from "../../helpers/show-password";
 import {OAuthLogin} from "../../api/user";
 import {useUserStore} from "../../stores/user";
+import {Errors} from "../../types";
 
 const {t} = useI18n()
 const router = useRouter()
@@ -21,7 +22,7 @@ const data = reactive({
     is_loading: false
 })
 
-const errors = reactive({
+const errors = reactive<Errors>({
     email: '',
     password: ''
 })
@@ -39,6 +40,8 @@ const v = useVuelidate({
 }, data) as Ref<Validation>;
 
 const submit = async () => {
+    Object.keys(errors).map(key => errors[key] = '')
+
     v.value.$touch()
 
     if (v.value.$invalid) {

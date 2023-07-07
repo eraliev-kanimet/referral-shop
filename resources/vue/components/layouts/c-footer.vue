@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+import SubscribeForm from "../site/subscribe-form.vue";
 </script>
 
 <template>
@@ -95,16 +96,7 @@
                                     <router-link :to="{name: 'products'}">{{ $t('common.bestsellers') }}</router-link>
                                 </li>
                             </ul>
-                            <form action="" class="footer-subscribe">
-                                <div class="row no-gutters">
-                                    <div class="col-8 pr-2">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-4">
-                                        <button type="submit" class="btn btn-secondary w-100">{{ $t('common.subscribe') }}</button>
-                                    </div>
-                                </div>
-                            </form>
+                            <subscribe-form/>
                         </div>
                     </div>
                 </div>

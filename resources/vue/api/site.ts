@@ -10,6 +10,7 @@ type SiteResponse = {
     testimonials: [],
     articles: [],
     faq: [],
+    countries: [],
 }
 
 export const Init = async (token: string): Promise<SiteResponse> => {
@@ -18,4 +19,16 @@ export const Init = async (token: string): Promise<SiteResponse> => {
             'Authorization': 'Bearer ' + token
         }
     }).then(response => response.data)
+}
+
+export const Subscribe = async (email: string) => {
+    return await axios.post('form/subscribe', {email})
+}
+
+export const ContactUs = async (data: object) => {
+    return await axios.post('form/contact_us', data)
+}
+
+export const Callback = async (phone: string) => {
+    return await axios.post('form/callback', {phone})
 }

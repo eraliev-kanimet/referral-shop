@@ -8,9 +8,11 @@ use App\Http\Resources\Category\CategoryIndexResource;
 use App\Http\Resources\UserResource;
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Country;
 use App\Models\Page;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Stevebauman\Location\Facades\Location;
 
 class SiteController extends Controller
@@ -38,6 +40,8 @@ class SiteController extends Controller
         $this->setFaq();
 
         $this->setArticles();
+
+        $this->setCountries();
 
         return response()->json($this->response);
     }
@@ -96,5 +100,14 @@ class SiteController extends Controller
         $this->response['articles'] = ArticleResource::collection(
             Article::limit(5)->where('posted', true)->get()
         );
+    }
+
+    protected function setCountries()
+    {
+        $countries = Cache::remember('countries', 60 * 24 * 7, function () {
+            return Country::orderBy('name')->get();
+        });
+
+        $this->response['countries'] = $countries;
     }
 }

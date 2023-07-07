@@ -10,6 +10,8 @@ import Paginator from "../paginator.vue";
 const siteStore = useSiteStore()
 
 defineProps<{
+    title: string,
+    not_found: string,
     products: Product[],
     category: Category|null,
     page: number,
@@ -20,7 +22,7 @@ const emit = defineEmits<{
     'set-page': [page: number]
 }>()
 
-const setPage = (page) => {
+const setPage = (page: number) => {
     emit('set-page', page)
 }
 </script>
@@ -41,10 +43,11 @@ const setPage = (page) => {
                 </ul>
             </div>
             <div class="dashboard-content">
-                <products-search :title="category ? category.name[siteStore.lang] : $t('common.categories')"/>
+                <products-search :title="title"/>
                 <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 no-gutters my-4">
                     <product-item :lang="siteStore.lang" v-for="product in products" :key="product.id" :product="product"/>
                 </div>
+                <div class="h2 w-100 text-center mb-5" v-show="!products.length">{{ not_found }}</div>
                 <paginator :total="total" :page="page" @set-page="setPage" :display="5"/>
                 <div class="row row-cols-1 row-cols-md-2 my-4">
                     <div class="col">

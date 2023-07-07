@@ -4,6 +4,7 @@ import CHeader from "../components/layouts/c-header.vue";
 import Breadcrumb from "../components/layouts/breadcrumb.vue";
 import CFooter from "../components/layouts/c-footer.vue";
 import MobileMenu from "../components/layouts/mobile-menu.vue";
+import CallbackForm from "../components/site/callback-form.vue";
 </script>
 
 <template>
@@ -14,4 +15,5 @@ import MobileMenu from "../components/layouts/mobile-menu.vue";
     </main>
     <c-footer/>
     <mobile-menu/>
+    <callback-form/>
 </template>

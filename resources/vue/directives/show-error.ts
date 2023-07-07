@@ -8,6 +8,6 @@ export default function (el: HTMLElement, binding: DirectiveBinding) {
         el.style.display = 'block'
     } else {
         el.innerText = ''
-        el.style.display = ''
+        el.style.display = 'none'
     }
 }

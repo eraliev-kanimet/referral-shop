@@ -10,6 +10,7 @@ import {helpers, required, email, sameAs, minLength} from "@vuelidate/validators
 import showPassword from "../../helpers/show-password";
 import {OAuthRegister} from "../../api/user";
 import {useUserStore} from "../../stores/user";
+import {Errors} from "../../types";
 
 const {t} = useI18n()
 const router = useRouter()
@@ -23,7 +24,7 @@ const data = reactive({
     is_loading: false
 })
 
-const errors = reactive({
+const errors = reactive<Errors>({
     email: '',
     phone: '',
     password: '',

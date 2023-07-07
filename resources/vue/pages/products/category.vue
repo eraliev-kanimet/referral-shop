@@ -7,7 +7,9 @@ import ProductsPage from "../../components/products/products-page.vue";
 import {Category, Product} from "../../stores/types";
 
 import {ApiCategory} from "../../api/products";
+import {useSiteStore} from "../../stores/site";
 
+const siteStore = useSiteStore()
 const route = useRoute()
 const router = useRouter()
 
@@ -39,7 +41,7 @@ const setProducts = async (page: number) => {
     })
 }
 
-const setPage = async (page) => {
+const setPage = async (page: number) => {
     if (!data.loading) {
         data.loading = true
 
@@ -73,10 +75,12 @@ onMounted(async () => {
 
 <template>
     <products-page
+        :title="data.category ? data.category.name[siteStore.lang] : ''"
         @set-page="setPage"
         :page="data.page"
         :total="data.total"
         :category="data.category"
         :products="data.products"
+        not_found=""
     />
 </template>

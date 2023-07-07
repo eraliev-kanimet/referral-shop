@@ -71,3 +71,13 @@ export type Article = {
     image: string,
     date: string,
 }
+
+export type Country = {
+    name: Translate,
+    code: string,
+    dial_code: string,
+    states: {
+        name: Translate,
+        code: string
+    }[]
+}

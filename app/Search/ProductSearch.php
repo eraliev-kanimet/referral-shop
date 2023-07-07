@@ -5,15 +5,13 @@ namespace App\Search;
 use App\Http\Resources\Product\ProductResource;
 use App\Models\Product;
 use Illuminate\Contracts\Database\Eloquent\Builder;
-use Illuminate\Pagination\LengthAwarePaginator;
 
 class ProductSearch
 {
     protected int $category_id = 0;
 
     public function __construct(
-        protected ?string $query_string = '',
-        protected int     $per_page = 12,
+        protected ?string $query_string = ''
     )
     {
     }
@@ -42,9 +40,9 @@ class ProductSearch
             });
         }
 
-        $paginator = $query->paginate($this->per_page)->withQueryString();
+        $paginator = $query->paginate(12)->withQueryString();
 
-        return $this->buildResponse($paginator);
+        return paginator_format($paginator, ProductResource::collection($paginator->items()));
     }
 
     public function setCategoryId(int $category_id): void
@@ -70,19 +68,5 @@ class ProductSearch
                 'category',
                 'packs' => fn(Builder $query) => $query->where('is_available', true)
             ]);
-    }
-
-    protected function buildResponse(LengthAwarePaginator $paginator): array
-    {
-        return [
-            'data' => ProductResource::collection($paginator->items()),
-            'current_page' => $paginator->currentPage(),
-            'last_page' => $paginator->lastPage(),
-            'next_page_url' => $paginator->nextPageUrl(),
-            'prev_page_url' => $paginator->previousPageUrl(),
-            'links' => $paginator->linkCollection(),
-            'per_page' => $this->per_page,
-            'total' => $paginator->total(),
-        ];
     }
 }

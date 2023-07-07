@@ -49,7 +49,7 @@ onMounted(async () => {
     await setProducts(data.page)
 })
 
-const setPage = async (page) => {
+const setPage = async (page: number) => {
     if (!data.loading) {
         data.loading = true
 
@@ -68,10 +68,12 @@ const setPage = async (page) => {
 
 <template>
     <products-page
+        :title="data.query ? $t('common.result_products', {query: `'${data.query}'`}) : $t('common.products')"
         @set-page="setPage"
         :page="data.page"
         :total="data.total"
         :category="null"
         :products="data.products"
+        :not_found="$t('common.no_products', {query: `'${data.query}'`})"
     />
 </template>

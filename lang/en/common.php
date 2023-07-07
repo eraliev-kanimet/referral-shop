@@ -312,5 +312,19 @@ return [
         'flacons' => 'Flacons',
         'inhalers' => 'Inhalers',
         'packs' => 'Packs',
-    ]
+    ],
+    'result_products' => "Products by request :query ",
+    'no_products' => "No products were found for :query ",
+    'request_sent_successfully' => 'Request sent successfully!',
+    'contact_us_status' => [
+        'g' => 'General',
+        'pm' => 'Payment Methods',
+        'dog' => 'Delivery of goods',
+        'rac' => 'Return and cancellation of an order',
+        'gog' => 'Guarantees for goods and services',
+        'os' => 'Order Status',
+    ],
+    'server_error' => 'Server is not responding, try again later',
+    'callback_request_form' => 'Callback Request Form',
+    'close' => 'Close',
 ];

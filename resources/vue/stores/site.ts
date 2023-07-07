@@ -4,16 +4,17 @@ import {useUserStore} from "./user";
 
 import {Init} from "../api/site";
 
-import {Article, Category, FaqItem, TestimonialsItem} from "./types"
+import {Article, Category, FaqItem, TestimonialsItem, Country} from "./types"
 
 type SiteRootState = {
     testimonials: TestimonialsItem[],
     articles: Article[],
     faq: FaqItem[],
     categories: Category[],
+    countries: Country[],
     country: string,
     is_loading: boolean,
-    lang: string
+    lang: 'en' | 'de' | 'fr' | 'es' | 'it'
 }
 
 export const useSiteStore = defineStore('site', {
@@ -24,7 +25,8 @@ export const useSiteStore = defineStore('site', {
         country: '',
         lang: 'en',
         is_loading: true,
-        categories: []
+        categories: [],
+        countries: [],
     }),
     actions: {
         async init() {
@@ -45,6 +47,7 @@ export const useSiteStore = defineStore('site', {
                     this.testimonials = response.testimonials
                     this.articles = response.articles
                     this.faq = response.faq
+                    this.countries = response.countries
                 })
 
                 this.is_loading = false
