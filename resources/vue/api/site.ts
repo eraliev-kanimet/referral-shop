@@ -10,6 +10,7 @@ type SiteResponse = {
     testimonials: [],
     articles: [],
     faq: [],
+    countries: [],
 }
 
 export const Init = async (token: string): Promise<SiteResponse> => {
