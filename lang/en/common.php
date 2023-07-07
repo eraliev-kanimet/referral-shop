@@ -325,4 +325,6 @@ return [
         'os' => 'Order Status',
     ],
     'server_error' => 'Server is not responding, try again later',
+    'callback_request_form' => 'Callback Request Form',
+    'close' => 'Close',
 ];
